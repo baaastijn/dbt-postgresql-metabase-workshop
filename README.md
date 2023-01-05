@@ -81,7 +81,7 @@ This workshop needs a Python environment, with the ability to browse files easil
 To be more visual and practical, we will opt for a Python notebook code editor. Most used ones in the world are JupyterLab and VSCode. We will create one in the cloud now.
 
 If required, create an OVHcloud free account or log in: 
-1. Log in OVHcloud control panel : <https//www.ovhcloud.com>.
+1. Log in OVHcloud control panel : <https://www.ovhcloud.com>.
 2. Go to Public Cloud section in the top menu.
 3. Create a new project if required.
 
