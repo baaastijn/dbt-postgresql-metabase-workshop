@@ -1,0 +1,25 @@
+You have multiple solutions for this exercise.
+
+The first one is add directly this condition inside your SQL queries.
+
+For example, it could be written like this inside your queries:
+
+
+with customers as (
+
+    select * from {{ ref('raw_customers') }}
+    WHERE
+    email NOT IN ('%@facebook.com')
+
+)
+
+But since your data team warned you about updates to come, the best is to proceed as follow:
+
+1/ create a CSV file called for exampe raw_suspicious.csv, inside quick_workshop/seeds/.
+2/ add one column, and inside the suspicious email providers such as @facebook.com.
+3/ do a DBT seed, it will create a new table called raw_suspicious.
+4/ now in your SQL queries, you can refer to this new table instead of harcoded values.
+
+A best practice should be to create this part as a DBT macro, so you can reuse it on multiple queries later.
+
+As a bonus : DBT support Jinja templating. you can also imagine a solution via jinja.

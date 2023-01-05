@@ -1,0 +1,1001 @@
+id,customer_id,order_date,order_item,order_status
+1,9,2022-03-06,"Beans - Turtle, Black, Dry",false
+2,37,2022-12-24,Pickle - Dill,true
+3,18,2022-09-05,Monkfish - Fresh,true
+4,25,2022-09-27,Iced Tea Concentrate,false
+5,67,2022-02-16,Table Cloth 54x54 White,false
+6,50,2022-01-11,Island Oasis - Raspberry,false
+7,82,2022-03-14,Ham - Procutinni,true
+8,67,2022-04-18,Beef - Shank,false
+9,92,2022-02-08,Everfresh Products,true
+10,19,2022-07-17,Kellogs Cereal In A Cup,true
+11,14,2022-04-11,Bread - Burger,true
+12,53,2022-07-09,Mussels - Frozen,true
+13,43,2022-08-10,Pail With Metal Handle 16l White,true
+14,100,2022-08-05,Lamb Leg - Bone - In Nz,false
+15,68,2022-06-20,Grapes - Red,false
+16,53,2022-07-20,Pail For Lid 1537,true
+17,23,2022-10-09,Sea Bass - Fillets,false
+18,59,2022-08-26,Bonito Flakes - Toku Katsuo,true
+19,53,2022-02-28,Vodka - Smirnoff,true
+20,15,2022-05-19,"Vodka - Lemon, Absolut",true
+21,13,2022-10-09,Lettuce - Iceberg,true
+22,87,2022-05-29,Container Clear 8 Oz,true
+23,28,2022-09-23,Smoked Paprika,false
+24,71,2022-12-28,Mustard - Seed,false
+25,21,2022-03-22,Pork Loin Bine - In Frenched,true
+26,60,2022-10-25,Truffle Cups - Red,false
+27,16,2022-06-30,Potato - Sweet,false
+28,77,2022-03-01,Pork - Ham Hocks - Smoked,false
+29,38,2022-08-12,Oil - Peanut,true
+30,10,2022-03-03,Gingerale - Diet - Schweppes,false
+31,100,2022-08-05,Onions - Green,true
+32,46,2022-08-14,Meldea Green Tea Liquor,true
+33,28,2022-11-27,Truffle Shells - Semi - Sweet,false
+34,28,2022-08-07,"Beans - Black Bean, Dry",false
+35,70,2022-07-05,Cornish Hen,true
+36,60,2022-11-27,Sugar - Fine,true
+37,55,2022-05-01,Fudge - Chocolate Fudge,false
+38,17,2022-05-21,Cake - Dulce De Leche,true
+39,98,2022-10-05,Beef - Salted,true
+40,85,2021-12-31,"Mushroom - Oyster, Fresh",true
+41,54,2022-01-12,Syrup - Pancake,true
+42,23,2022-09-21,Cumin - Whole,false
+43,83,2022-07-05,Chinese Foods - Pepper Beef,false
+44,22,2022-01-18,Cranberry Foccacia,false
+45,44,2022-01-23,Grapes - Red,true
+46,36,2022-09-23,Cocktail Napkin Blue,false
+47,54,2022-12-27,Tahini Paste,true
+48,93,2022-05-05,Brandy Cherry - Mcguinness,false
+49,43,2022-10-14,Shiro Miso,true
+50,87,2022-10-24,Pepper - Green,false
+51,70,2021-12-30,Napkin - Beverage 1 Ply,false
+52,59,2022-03-14,Bag Clear 10 Lb,true
+53,45,2022-09-08,Calypso - Pineapple Passion,true
+54,50,2022-04-10,Kiwano,true
+55,4,2022-05-11,Tomato - Plum With Basil,false
+56,30,2022-09-19,"Wine - Red, Pinot Noir, Chateau",false
+57,91,2022-03-19,Sloe Gin - Mcguinness,true
+58,28,2022-02-15,Longos - Grilled Veg Sandwiches,true
+59,46,2022-05-01,Cheese Cloth No 100,false
+60,77,2022-12-25,Pork - Smoked Back Bacon,false
+61,2,2022-01-31,Peas - Frozen,false
+62,90,2022-07-17,Curry Paste - Madras,true
+63,73,2022-10-12,Squash - Acorn,true
+64,75,2022-05-24,Cheese - Camembert,false
+65,47,2022-11-05,"Coconut - Shredded, Unsweet",true
+66,66,2022-04-15,"Soup - Beef, Base Mix",false
+67,42,2022-11-07,Lamb - Whole Head Off,true
+68,94,2022-06-16,Tea - Orange Pekoe,false
+69,97,2022-01-09,Nectarines,false
+70,85,2022-06-27,Bacon Strip Precooked,true
+71,29,2022-09-24,Bread - Frozen Basket Variety,true
+72,78,2022-03-08,"Sauce - Soya, Light",true
+73,71,2022-04-04,Cookies - Assorted,true
+74,22,2022-03-01,Carbonated Water - Cherry,true
+75,82,2022-02-06,Capicola - Hot,true
+76,62,2022-07-18,Wine - Coteaux Du Tricastin Ac,true
+77,77,2022-01-20,English Muffin,true
+78,75,2022-06-08,Soup - Campbellschix Stew,true
+79,38,2022-01-29,"Wine - Red, Gamay Noir",false
+80,54,2022-04-10,"Wine - Red, Wolf Blass, Yellow",false
+81,27,2022-04-17,Oil - Pumpkinseed,true
+82,17,2022-06-14,Bagel - Sesame Seed Presliced,true
+83,17,2022-11-20,"Lid - 10,12,16 Oz",false
+84,77,2022-01-11,Oil - Avocado,true
+85,98,2022-09-30,Bread - Rye,false
+86,52,2022-11-06,Sauce - Soy Low Sodium - 3.87l,true
+87,54,2022-08-21,Chocolate - Dark Callets,true
+88,52,2022-02-01,Cheese - Fontina,false
+89,44,2022-08-21,"Pepper - Red, Finger Hot",true
+90,4,2022-05-13,Pate - Liver,false
+91,79,2022-09-09,Sour Puss - Tangerine,false
+92,78,2022-09-23,Sauce - Sesame Thai Dressing,true
+93,40,2022-06-01,"Wine - White, Antinore Orvieto",true
+94,77,2022-07-28,Sprouts - Pea,false
+95,25,2022-01-28,Pork - European Side Bacon,true
+96,76,2022-01-12,Juice - Propel Sport,false
+97,93,2022-05-10,Bay Leaf,false
+98,93,2022-01-24,Butter - Unsalted,false
+99,26,2022-01-25,Container - Foam Dixie 12 Oz,false
+100,60,2022-10-09,Campari,false
+101,11,2022-08-18,Olives - Kalamata,true
+102,12,2022-02-27,Arrowroot,true
+103,50,2022-02-19,Ham - Cooked Italian,true
+104,39,2022-05-26,"Lamb - Whole, Frozen",false
+105,96,2022-08-04,Duck - Breast,false
+106,84,2022-04-10,Kale - Red,true
+107,98,2022-12-02,Herb Du Provence - Primerba,true
+108,44,2022-07-23,Cheese - Parmesan Grated,false
+109,36,2022-11-30,"Mushroom - Chantrelle, Fresh",false
+110,56,2022-12-28,Chips - Miss Vickies,false
+111,12,2022-03-12,Soup - Campbells Mac N Cheese,false
+112,40,2022-03-07,Wine - Lamancha Do Crianza,false
+113,20,2022-08-01,Trueblue - Blueberry,false
+114,86,2022-06-03,Bouillion - Fish,true
+115,15,2022-03-15,Bread - Italian Corn Meal Poly,true
+116,78,2022-01-20,"Soup - Campbells, Classic Chix",false
+117,13,2022-10-03,"Pork - Chop, Frenched",false
+118,92,2022-11-06,Lettuce - Baby Salad Greens,false
+119,65,2022-12-18,"Red Snapper - Fresh, Whole",false
+120,48,2022-12-09,Roe - White Fish,false
+121,26,2022-12-01,Duck - Fat,false
+122,56,2022-02-01,Chip - Potato Dill Pickle,false
+123,46,2022-07-30,Pork - Suckling Pig,false
+124,95,2022-03-15,Sprouts - Bean,true
+125,66,2022-08-24,Gooseberry,true
+126,79,2022-01-18,Wine - Bouchard La Vignee Pinot,true
+127,16,2021-12-29,Clams - Canned,true
+128,73,2022-02-23,Devonshire Cream,false
+129,60,2022-04-26,Lemon Pepper,true
+130,89,2022-10-12,Pepper Squash,true
+131,2,2022-05-12,Lemon Balm - Fresh,false
+132,74,2022-09-03,Compound - Passion Fruit,true
+133,59,2022-04-14,Tequila - Sauza Silver,true
+134,84,2022-12-15,Carbonated Water - Lemon Lime,false
+135,14,2022-03-10,"Veal - Inside, Choice",true
+136,98,2022-09-16,Wine - Chateau Bonnet,false
+137,52,2022-06-24,Tahini Paste,true
+138,20,2022-02-27,Quail - Jumbo Boneless,false
+139,39,2022-05-13,"Wine - White, Colubia Cresh",true
+140,48,2022-02-05,"Bread - Roll, Canadian Dinner",false
+141,92,2022-11-02,Wine - Cave Springs Dry Riesling,true
+142,82,2022-03-21,Peach - Halves,true
+143,78,2022-03-17,Wine - George Duboeuf Rose,false
+144,33,2022-07-13,Jerusalem Artichoke,false
+145,31,2022-05-30,"Cheese - Manchego, Spanish",false
+146,8,2022-08-19,Soup V8 Roasted Red Pepper,false
+147,32,2022-12-04,Food Colouring - Green,false
+148,16,2022-01-14,Appetizer - Assorted Box,false
+149,85,2022-09-30,Apricots - Dried,true
+150,5,2022-08-17,Cake - Night And Day Choclate,false
+151,41,2022-01-02,Squid - U - 10 Thailand,true
+152,98,2022-01-28,Nantucket - Orange Mango Cktl,true
+153,1,2022-01-09,Gelatine Leaves - Bulk,false
+154,91,2022-01-23,Energy Drink,false
+155,50,2022-09-21,Tumeric,true
+156,12,2022-03-10,Spinach - Baby,true
+157,1,2022-04-29,Cheese - Brick With Onion,false
+158,79,2022-11-26,Tea - Mint,true
+159,2,2022-12-28,"Veal - Tenderloin, Untrimmed",false
+160,59,2022-02-12,"Apple - Delicious, Red",false
+161,73,2022-01-06,Coffee - Dark Roast,false
+162,89,2022-05-25,Propel Sport Drink,true
+163,32,2022-10-26,"Coke - Classic, 355 Ml",true
+164,54,2022-09-25,Appetizer - Cheese Bites,true
+165,49,2022-08-17,"Yogurt - Blueberry, 175 Gr",true
+166,44,2022-10-28,Beer - Fruli,false
+167,71,2022-01-05,Kellogs Special K Cereal,true
+168,57,2022-01-12,Silicone Paper 16.5x24,true
+169,85,2022-05-21,Grapes - Red,false
+170,59,2022-07-21,Pepperoni Slices,false
+171,6,2022-08-22,"Wine - White, Riesling, Semi - Dry",false
+172,22,2022-12-22,Wine - Vouvray Cuvee Domaine,false
+173,36,2022-06-11,Crackers - Soda / Saltins,true
+174,35,2022-04-05,Cookie Dough - Chocolate Chip,false
+175,55,2022-02-09,Sherbet - Raspberry,false
+176,50,2022-05-26,Cognac - Courvaisier,true
+177,92,2022-07-26,Bagels Poppyseed,true
+178,17,2021-12-29,Caviar - Salmon,true
+179,92,2022-09-02,Wine La Vielle Ferme Cote Du,false
+180,68,2022-01-27,V8 Splash Strawberry Banana,true
+181,45,2022-10-03,Sage - Fresh,true
+182,77,2022-05-10,"Pork - Tenderloin, Frozen",false
+183,87,2022-03-24,Bread - English Muffin,false
+184,35,2022-08-14,Flour - Fast / Rapid,true
+185,62,2021-12-30,Sausage - Breakfast,true
+186,47,2022-10-27,Cinnamon - Ground,false
+187,49,2022-01-19,V8 Pet,true
+188,89,2022-04-29,Energy Drink - Redbull 355ml,false
+189,72,2022-03-23,Sea Bass - Whole,true
+190,91,2022-11-16,Chocolate Bar - Smarties,true
+191,13,2022-07-24,Turkey - Oven Roast Breast,false
+192,19,2022-01-14,"Quail - Whole, Bone - In",false
+193,54,2022-11-21,Pork - Side Ribs,false
+194,15,2022-12-03,Wine - Dubouef Macon - Villages,false
+195,19,2022-09-29,Lamb - Shoulder,false
+196,32,2022-07-26,Chinese Foods - Chicken Wing,false
+197,97,2022-05-26,Capers - Pickled,false
+198,59,2022-05-21,Foil Cont Round,false
+199,100,2022-03-31,Pork - European Side Bacon,true
+200,23,2022-08-20,"Peas - Pigeon, Dry",false
+201,76,2022-12-11,Wine - Champagne Brut Veuve,false
+202,74,2022-04-28,Crawfish,true
+203,69,2022-07-31,Steampan - Foil,false
+204,63,2022-06-01,Pur Source,false
+205,11,2022-08-02,Sauce - Sesame Thai Dressing,true
+206,49,2022-08-19,Salt - Seasoned,false
+207,7,2022-02-23,Mustard - Pommery,false
+208,35,2022-10-04,Gatorade - Fruit Punch,true
+209,18,2022-03-29,Corn Meal,false
+210,66,2022-09-03,"Shrimp - Baby, Warm Water",false
+211,51,2022-11-27,"Turkey - Breast, Double",false
+212,58,2022-11-10,Cup - Translucent 7 Oz Clear,false
+213,31,2022-11-24,Corn - Mini,false
+214,79,2022-10-08,Wine - Manischewitz Concord,true
+215,35,2022-10-07,Piping - Bags Quizna,true
+216,79,2022-05-15,Cloves - Whole,true
+217,56,2022-05-01,Pants Custom Dry Clean,false
+218,88,2022-06-28,Vacuum Bags 12x16,true
+219,64,2022-10-13,Cranberry Foccacia,true
+220,71,2022-11-04,Lamb - Whole Head Off,true
+221,16,2022-10-03,Red Currants,true
+222,84,2022-10-24,Wine - Pinot Grigio Collavini,false
+223,12,2022-06-16,Beer - Pilsner Urquell,false
+224,10,2022-12-13,Pie Filling - Cherry,false
+225,60,2022-05-01,Bread - Bistro Sour,false
+226,81,2022-09-23,Puff Pastry - Slab,false
+227,75,2022-09-12,Bar Nature Valley,true
+228,16,2022-10-18,Wine - Prosecco Valdobiaddene,true
+229,25,2022-09-01,Beef - Diced,false
+230,2,2022-11-28,Bread Base - Italian,false
+231,33,2022-02-12,V8 Splash Strawberry Kiwi,false
+232,46,2022-10-23,Gherkin,true
+233,6,2022-03-19,Fruit Salad Deluxe,true
+234,69,2022-06-11,Lettuce - Lolla Rosa,false
+235,34,2022-04-02,"Vermouth - White, Cinzano",true
+236,32,2022-08-19,Monkfish - Fresh,false
+237,53,2022-01-22,Water - Spring Water 500ml,false
+238,42,2022-11-02,Lamb - Shoulder,true
+239,48,2022-06-05,"Pork - Sausage, Medium",true
+240,2,2022-09-24,Ocean Spray - Ruby Red,true
+241,15,2022-12-11,Muffin - Blueberry Individual,true
+242,13,2022-11-15,Syrup - Monin - Passion Fruit,true
+243,29,2022-11-26,Croissants Thaw And Serve,true
+244,89,2022-11-22,Cheese - Stilton,true
+245,56,2022-02-25,Orange - Tangerine,true
+246,64,2022-03-09,Chicken - Base,false
+247,59,2022-09-21,"Pasta - Gnocchi, Potato",false
+248,40,2022-04-08,Soup - Cream Of Broccoli,true
+249,85,2022-10-26,Triple Sec - Mcguinness,true
+250,81,2022-07-31,Wine - Bouchard La Vignee Pinot,false
+251,80,2022-10-30,Pork - Back Ribs,true
+252,8,2022-09-26,Drambuie,true
+253,24,2022-09-30,Bread Ww Cluster,true
+254,94,2022-04-24,"Flour - Buckwheat, Dark",true
+255,54,2022-12-18,Wine - Champagne Brut Veuve,true
+256,61,2022-12-21,Cake - Cake Sheet Macaroon,true
+257,56,2022-02-15,Wine - Two Oceans Sauvignon,true
+258,53,2022-02-25,Island Oasis - Lemonade,true
+259,73,2022-07-08,The Pop Shoppe - Black Cherry,false
+260,10,2022-07-17,Chocolate Eclairs,false
+261,22,2022-10-24,Cranberry Foccacia,false
+262,24,2022-03-23,"Jam - Marmalade, Orange",false
+263,33,2022-10-24,Wine - Chateau Timberlay,true
+264,12,2022-11-07,"Sauce - Apple, Unsweetened",true
+265,97,2022-12-21,Soup - Campbells Chili Veg,true
+266,46,2022-02-24,Wasabi Powder,false
+267,19,2021-12-31,"Lamb - Leg, Diced",false
+268,46,2022-02-05,Gatorade - Cool Blue Raspberry,false
+269,48,2022-02-17,Sorrel - Fresh,true
+270,19,2022-09-19,Wine - Barossa Valley Estate,true
+271,85,2022-12-09,"Veal - Shank, Pieces",false
+272,15,2022-08-30,Wine - Vidal Icewine Magnotta,false
+273,69,2022-08-04,"Nut - Almond, Blanched, Ground",false
+274,45,2022-01-26,Kellogs Cereal In A Cup,true
+275,39,2022-10-24,"Soup - Campbells, Lentil",true
+276,2,2022-01-05,Dr. Pepper - 355ml,true
+277,89,2022-02-23,Scrubbie - Scotchbrite Hand Pad,true
+278,67,2022-12-25,"Flour - Buckwheat, Dark",false
+279,57,2022-08-03,Beets - Mini Golden,false
+280,100,2022-04-19,Coffee Cup 8oz 5338cd,true
+281,25,2022-06-26,Banana,false
+282,98,2022-08-05,"Pasta - Shells, Medium, Dry",true
+283,5,2022-06-06,Beer - Heinekin,false
+284,14,2022-05-23,Beef - Ground Medium,true
+285,63,2022-08-14,Skirt - 24 Foot,false
+286,14,2022-04-13,Cheese Cloth No 60,false
+287,49,2022-05-19,"Soup - Cream Of Broccoli, Dry",true
+288,86,2022-03-18,Kellogs Special K Cereal,true
+289,47,2022-12-25,Sobe - Green Tea,true
+290,27,2022-11-18,"Coffee - Beans, Whole",true
+291,73,2022-02-08,Cumin - Ground,true
+292,83,2022-06-14,Kiwi,true
+293,41,2022-05-15,Puree - Blackcurrant,false
+294,79,2022-03-21,"Beef - Roasted, Cooked",true
+295,2,2022-08-17,Chicken - Tenderloin,false
+296,30,2022-01-03,Wine - Maipo Valle Cabernet,false
+297,46,2022-05-15,Cherries - Frozen,false
+298,75,2022-05-11,Appetizer - Assorted Box,false
+299,42,2022-04-23,Asparagus - Mexican,false
+300,10,2022-06-20,Juice - Cranberry 284ml,true
+301,84,2022-10-17,Breadfruit,true
+302,87,2022-06-30,Cake - Lemon Chiffon,false
+303,57,2022-07-05,"Water - Mineral, Natural",true
+304,25,2022-03-04,"Wine - Mas Chicet Rose, Vintage",true
+305,78,2022-08-17,Sun - Dried Tomatoes,false
+306,49,2022-07-25,Lime Cordial - Roses,false
+307,37,2022-08-08,Tuna - Salad Premix,true
+308,66,2022-05-03,"Juice - Tomato, 48 Oz",true
+309,70,2022-10-29,Breakfast Quesadillas,false
+310,35,2022-03-18,Cheese - Perron Cheddar,true
+311,91,2022-08-03,"Jam - Raspberry,jar",true
+312,54,2022-04-27,Versatainer Nc - 888,false
+313,9,2022-04-08,"Carrots - Purple, Organic",true
+314,31,2022-05-08,"Wine - Red, Cooking",true
+315,9,2022-11-25,Bread - Multigrain,true
+316,93,2022-06-15,Pork - Suckling Pig,false
+317,30,2022-09-20,Clam Nectar,true
+318,100,2022-07-03,Tea - Black Currant,true
+319,68,2022-01-02,Flavouring - Raspberry,false
+320,29,2022-09-03,Ice Cream - Life Savers,false
+321,36,2022-10-19,"Tomatoes - Plum, Canned",true
+322,80,2022-03-23,"Tart Shells - Sweet, 2",false
+323,71,2022-05-17,The Pop Shoppe - Cream Soda,true
+324,91,2022-06-07,Beef - Kobe Striploin,false
+325,71,2022-11-25,Wine - Pinot Grigio Collavini,false
+326,66,2022-10-04,Vanilla Beans,true
+327,38,2022-06-09,Lamb Tenderloin Nz Fr,true
+328,11,2022-04-06,Flavouring - Raspberry,true
+329,35,2022-08-25,Tomato Puree,true
+330,14,2022-06-29,Milk - Chocolate 250 Ml,true
+331,72,2022-02-09,Juice - Mango,false
+332,19,2022-06-15,Shrimp - Tiger 21/25,true
+333,11,2022-01-08,Ham - Virginia,false
+334,87,2022-02-06,Icecream Cone - Areo Chocolate,true
+335,51,2022-04-12,"Juice - Grape, White",true
+336,68,2022-08-12,Gelatine Leaves - Envelopes,false
+337,26,2022-06-03,"Salsify, Organic",true
+338,42,2022-06-03,"Fish - Artic Char, Cold Smoked",false
+339,76,2022-09-13,Sour Puss - Tangerine,true
+340,86,2022-05-06,Butter Balls Salted,true
+341,59,2022-08-26,Table Cloth - 53x69 Colour,false
+342,19,2022-08-24,Papadam,false
+343,83,2022-11-28,Country Roll,false
+344,36,2022-10-25,Tuna - Sushi Grade,true
+345,41,2022-02-16,Wine - Riesling Alsace Ac 2001,false
+346,38,2022-05-06,Mousse - Passion Fruit,false
+347,67,2022-07-05,Ecolab - Hobart Upr Prewash Arm,false
+348,63,2022-01-22,"Oil - Shortening,liqud, Fry",false
+349,75,2022-10-06,Cognac - Courvaisier,true
+350,22,2022-04-04,"Noodles - Cellophane, Thin",true
+351,37,2022-03-02,Wine - Conde De Valdemar,false
+352,93,2022-03-22,Trout - Smoked,true
+353,44,2022-04-08,Amaretto,false
+354,92,2022-01-16,Mangostein,false
+355,74,2022-01-03,Remy Red,false
+356,49,2022-06-03,Juice - Orangina,false
+357,90,2022-02-07,Syrup - Kahlua Chocolate,true
+358,23,2022-04-22,"Quail - Whole, Bone - In",true
+359,72,2022-09-12,Sprouts - Alfalfa,false
+360,31,2022-08-13,"Extract - Vanilla,artificial",true
+361,52,2022-11-14,"Nut - Hazelnut, Ground, Natural",true
+362,39,2022-11-13,"Turkey - Breast, Double",false
+363,42,2022-10-10,Puree - Guava,true
+364,95,2022-02-28,Sugar - Monocystal / Rock,false
+365,49,2022-02-04,Crackers - Trio,true
+366,30,2022-04-27,"Yeast - Fresh, Fleischman",false
+367,13,2022-02-13,"Coconut - Creamed, Pure",false
+368,29,2022-08-10,"Mushroom - Chanterelle, Dry",true
+369,75,2022-08-06,Curry Powder,false
+370,99,2022-08-03,Filo Dough,true
+371,63,2022-05-01,Chives - Fresh,true
+372,36,2022-06-24,Coconut Milk - Unsweetened,true
+373,59,2022-11-01,V8 Splash Strawberry Banana,true
+374,76,2022-02-26,Sterno - Chafing Dish Fuel,false
+375,93,2022-12-03,Peas - Frozen,true
+376,51,2022-02-19,Ginger - Pickled,true
+377,10,2022-05-05,Milkettes - 2%,true
+378,51,2022-01-22,"Turkey - Breast, Smoked",false
+379,80,2022-05-14,Beer - Creemore,true
+380,20,2022-04-13,Anchovy Paste - 56 G Tube,true
+381,27,2022-11-01,Peach - Halves,false
+382,40,2022-08-14,Table Cloth 54x72 White,false
+383,67,2022-02-12,Beer - Blue Light,false
+384,47,2022-07-16,Muffin - Mix - Mango Sour Cherry,true
+385,78,2022-04-28,Table Cloth 62x120 Colour,true
+386,10,2022-06-13,Table Cloth 54x54 Colour,true
+387,70,2022-12-09,"Salmon - Atlantic, Fresh, Whole",true
+388,41,2022-05-26,Cabbage - Green,true
+389,88,2022-12-05,Blouse / Shirt / Sweater,true
+390,19,2022-01-28,Duck - Fat,false
+391,71,2022-08-07,Puree - Blackcurrant,true
+392,47,2022-08-27,Emulsifier,false
+393,31,2022-05-08,Ginger - Fresh,true
+394,1,2022-11-26,Icecream - Dibs,true
+395,86,2022-04-05,Sardines,true
+396,82,2022-06-16,Squid - Breaded,false
+397,25,2022-03-01,Calypso - Lemonade,true
+398,19,2022-09-02,"Soup - Knorr, Country Bean",true
+399,25,2022-05-25,Cranberries - Frozen,true
+400,48,2022-02-27,Syrup - Pancake,true
+401,94,2022-06-24,"Pineapple - Canned, Rings",true
+402,94,2022-08-02,"Yogurt - Peach, 175 Gr",true
+403,98,2022-10-26,Mix - Cocktail Strawberry Daiquiri,true
+404,83,2022-02-17,Clams - Bay,true
+405,24,2022-08-02,Beets,false
+406,90,2022-01-15,Wine - Two Oceans Cabernet,false
+407,31,2022-10-20,Longos - Chicken Wings,true
+408,49,2022-09-22,Yeast Dry - Fleischman,true
+409,7,2022-04-03,Ecolab Crystal Fusion,true
+410,7,2022-06-24,Pastry - Carrot Muffin - Mini,true
+411,95,2022-06-09,"Bread - Pita, Mini",true
+412,57,2022-09-23,"Nut - Chestnuts, Whole",false
+413,24,2022-01-06,Dome Lid Clear P92008h,false
+414,4,2022-03-04,Sugar - Cubes,false
+415,17,2022-11-05,Wine - Blue Nun Qualitatswein,false
+416,41,2022-05-27,"Stock - Beef, Brown",false
+417,88,2022-11-22,Venison - Liver,true
+418,78,2022-10-24,Glass - Juice Clear 5oz 55005,false
+419,46,2022-05-26,"Nut - Pine Nuts, Whole",false
+420,43,2022-09-30,Pate - Peppercorn,true
+421,99,2022-05-06,Garlic - Peeled,false
+422,50,2022-12-22,"Tart Shells - Barquettes, Savory",false
+423,7,2022-04-08,Nantuket Peach Orange,false
+424,51,2021-12-31,Jameson Irish Whiskey,false
+425,47,2022-09-08,Wine - Masi Valpolocell,false
+426,3,2022-01-06,Baking Powder,true
+427,24,2022-11-26,"Bread - White, Unsliced",false
+428,77,2022-08-02,Cocoa Feuilletine,false
+429,28,2022-09-29,Bagel - Plain,true
+430,91,2021-12-31,"Beans - Kidney, Red Dry",true
+431,66,2022-10-16,Flour - Bread,false
+432,55,2022-01-13,Cocoa Butter,false
+433,98,2022-05-31,Pineapple - Regular,false
+434,99,2022-05-24,Ice Cream - Chocolate,false
+435,20,2022-03-07,Sprouts - Baby Pea Tendrils,true
+436,53,2022-04-25,"Soup - Campbells, Lentil",true
+437,79,2022-05-03,"Beans - Long, Chinese",true
+438,69,2022-12-11,Cherries - Fresh,false
+439,87,2022-02-23,Muffin Mix - Banana Nut,false
+440,62,2022-05-03,Melon - Honey Dew,false
+441,84,2022-12-11,Coffee - Dark Roast,false
+442,38,2022-02-28,Veal - Striploin,false
+443,87,2022-05-16,Versatainer Nc - 8288,false
+444,57,2022-11-04,"Olives - Black, Pitted",false
+445,71,2022-05-19,Gatorade - Orange,true
+446,49,2022-10-21,Nantuket Peach Orange,false
+447,61,2022-03-11,Parasol Pick Stir Stick,false
+448,40,2022-10-31,"Ecolab - Orange Frc, Cleaner",true
+449,63,2022-06-26,Cake - Night And Day Choclate,false
+450,18,2022-04-15,"Onions - Dried, Chopped",false
+451,28,2022-05-13,Magnotta Bel Paese Red,false
+452,11,2022-08-28,Tuna - Yellowfin,false
+453,73,2022-09-02,Pastry - Mini French Pastries,false
+454,57,2022-12-01,Foam Tray S2,false
+455,38,2022-12-16,Lamb Rack Frenched Australian,true
+456,64,2022-11-01,Muffin Mix - Corn Harvest,true
+457,10,2022-09-04,Barramundi,false
+458,69,2022-08-02,Fuji Apples,true
+459,3,2022-11-01,Ecolab Crystal Fusion,false
+460,11,2022-05-09,Chinese Foods - Pepper Beef,false
+461,46,2022-04-05,Hold Up Tool Storage Rack,false
+462,57,2022-02-05,Sauce - Rosee,false
+463,31,2022-11-10,Sobe - Orange Carrot,true
+464,49,2022-04-23,Wine - Magnotta - Bel Paese White,true
+465,41,2022-07-11,Muffin Hinge 117n,false
+466,32,2022-11-12,Potatoes - Mini White 3 Oz,true
+467,43,2022-12-26,"Turkey - Breast, Bone - In",false
+468,32,2022-04-11,Table Cloth 90x90 White,true
+469,46,2022-08-15,V8 - Berry Blend,false
+470,41,2022-05-31,"Cheese - Brie, Triple Creme",true
+471,18,2022-04-22,Wine - Valpolicella Masi,false
+472,28,2022-05-13,Bread - Crusty Italian Poly,false
+473,90,2022-02-05,Chambord Royal,true
+474,86,2022-11-11,Wine - Riesling Alsace Ac 2001,false
+475,46,2022-06-14,Flower - Leather Leaf Fern,true
+476,23,2022-03-21,Tahini Paste,true
+477,2,2022-05-06,Vacuum Bags 12x16,true
+478,24,2022-02-05,Barley - Pearl,false
+479,89,2022-06-22,Sugar - Palm,true
+480,69,2022-05-30,"Jam - Blackberry, 20 Ml Jar",true
+481,27,2022-09-19,Mushroom - Crimini,false
+482,76,2022-02-27,Towels - Paper / Kraft,true
+483,19,2022-11-27,"Veal - Leg, Provimi - 50 Lb Max",true
+484,60,2022-09-06,Pear - Prickly,false
+485,44,2022-03-05,Cheese Cloth No 100,false
+486,82,2022-11-26,"Fish - Artic Char, Cold Smoked",false
+487,9,2022-08-29,Sugar - Monocystal / Rock,false
+488,36,2022-05-29,Bread - Bistro Sour,true
+489,36,2022-09-05,Radish,false
+490,42,2022-04-27,Spice - Greek 1 Step,false
+491,84,2022-07-14,"Juice - Tomato, 48 Oz",false
+492,34,2022-08-04,Glaze - Apricot,false
+493,37,2022-01-14,Pepper - Red Chili,true
+494,64,2022-12-04,"Chilli Paste, Sambal Oelek",true
+495,88,2022-10-22,Tuna - Bluefin,true
+496,2,2022-03-20,Bag Clear 10 Lb,false
+497,88,2022-09-26,"Noodles - Cellophane, Thin",false
+498,49,2022-09-23,Tia Maria,true
+499,95,2022-06-02,Coffee - Cafe Moreno,true
+500,13,2022-10-23,Crackers - Trio,false
+501,81,2022-02-25,Tray - 12in Rnd Blk,false
+502,57,2022-05-27,Limes,false
+503,1,2022-08-14,"Soup - Knorr, Chicken Noodle",false
+504,23,2022-05-10,Lamb - Sausage Casings,false
+505,79,2022-11-27,"Bread - Bagels, Plain",false
+506,25,2022-12-10,Sugar - Monocystal / Rock,true
+507,14,2022-01-15,Sambuca - Ramazzotti,true
+508,81,2022-03-07,Plate Foam Laminated 9in Blk,false
+509,11,2022-11-16,Kellogs Cereal In A Cup,true
+510,100,2022-01-30,Lettuce - Treviso,false
+511,22,2022-08-22,Island Oasis - Wildberry,true
+512,10,2022-04-20,"Jam - Raspberry,jar",true
+513,40,2022-10-22,Silicone Paper 16.5x24,false
+514,76,2022-06-07,Cinnamon - Stick,false
+515,73,2022-08-28,"Wine - Red, Gamay Noir",true
+516,14,2022-10-26,V8 Splash Strawberry Kiwi,true
+517,92,2022-03-25,Plate Foam Laminated 9in Blk,true
+518,13,2022-12-26,Tea - Grapefruit Green Tea,false
+519,20,2022-08-18,Muffin Mix - Raisin Bran,false
+520,33,2022-02-24,Coconut - Whole,false
+521,19,2022-07-17,Wine - Baron De Rothschild,false
+522,45,2022-09-03,Devonshire Cream,true
+523,5,2022-04-05,Soup - Campbells Mushroom,false
+524,79,2022-12-07,Pail With Metal Handle 16l White,false
+525,82,2022-07-03,Wine - Mondavi Coastal Private,false
+526,1,2022-12-05,Milk - 2%,true
+527,99,2022-01-26,Appetizer - Seafood Assortment,true
+528,70,2022-07-04,Sauce - Mint,true
+529,93,2022-12-07,Cheese - Parmigiano Reggiano,true
+530,90,2022-08-19,French Pastries,false
+531,66,2022-04-07,Jameson Irish Whiskey,false
+532,100,2022-04-11,Anisette - Mcguiness,true
+533,52,2022-10-21,Nantucket Cranberry Juice,false
+534,44,2022-09-14,Salmon - Sockeye Raw,false
+535,48,2022-02-03,Oranges,true
+536,27,2022-12-07,"Beef - Tenderlion, Center Cut",false
+537,34,2022-10-11,Appetizer - Mango Chevre,true
+538,61,2022-09-25,Mini - Vol Au Vents,false
+539,32,2022-04-17,Butter Balls Salted,true
+540,26,2022-06-15,Wine - Red Oakridge Merlot,false
+541,59,2022-03-09,"Cake Circle, Paprus",false
+542,93,2022-01-26,Neckerchief Blck,true
+543,44,2022-03-06,"Salmon - Smoked, Sliced",false
+544,50,2022-07-05,Drambuie,true
+545,72,2022-11-16,"Beer - Alexander Kieths, Pale Ale",false
+546,78,2022-06-12,Bread Crumbs - Japanese Style,true
+547,73,2022-05-30,Wine - Niagara Peninsula Vqa,false
+548,15,2022-03-09,Napkin White,false
+549,82,2022-07-25,Carbonated Water - Strawberry,true
+550,81,2022-09-22,Beer - Blue Light,false
+551,4,2022-01-12,Tuna - Loin,true
+552,79,2021-12-31,Bananas,true
+553,84,2022-02-01,Chicken - Bones,false
+554,12,2022-03-26,"Melon - Watermelon, Seedless",false
+555,39,2022-11-13,Island Oasis - Mango Daiquiri,true
+556,66,2022-08-06,"Cookies - Oreo, 4 Pack",true
+557,55,2022-04-07,Red Currants,false
+558,64,2022-06-23,Tomato Puree,false
+559,85,2022-03-09,V8 - Berry Blend,true
+560,88,2022-11-02,Veal Inside - Provimi,true
+561,4,2022-12-16,Island Oasis - Raspberry,true
+562,67,2022-07-29,Fond - Chocolate,true
+563,36,2022-08-28,Puree - Mango,false
+564,82,2022-06-02,"Wine - Harrow Estates, Vidal",false
+565,79,2022-04-30,Cream - 18%,true
+566,55,2022-08-01,Tomatoes - Cherry,false
+567,8,2022-11-13,Flour - So Mix Cake White,false
+568,34,2022-05-06,Milk - 2% 250 Ml,true
+569,47,2022-12-03,Cake - Dulce De Leche,false
+570,77,2022-09-23,"Pasta - Lasagne, Fresh",false
+571,40,2022-04-19,Tea - Decaf 1 Cup,false
+572,45,2022-04-22,Ham Black Forest,false
+573,5,2022-08-07,Shrimp - Black Tiger 16/20,false
+574,57,2022-06-08,"Oil - Truffle, Black",false
+575,80,2022-10-21,Appetizer - Escargot Puff,true
+576,2,2022-12-21,Beer - Rickards Red,true
+577,78,2022-01-30,Miso Paste White,false
+578,8,2022-03-07,"Seedlings - Mix, Organic",true
+579,26,2022-11-14,Cafe Royale,false
+580,76,2022-01-14,Apple - Custard,true
+581,82,2022-06-28,Mustard Prepared,false
+582,48,2022-03-30,Papadam,false
+583,60,2022-09-05,Coffee - French Vanilla Frothy,true
+584,17,2022-11-08,Cream - 35%,true
+585,64,2022-05-28,"Soup - Campbells, Beef Barley",false
+586,34,2022-01-19,Pail With Metal Handle 16l White,false
+587,86,2022-06-18,Pepper - Pablano,true
+588,13,2022-05-28,Cheese - Parmesan Grated,true
+589,79,2022-07-14,Energy - Boo - Koo,true
+590,11,2022-08-25,Cinnamon Rolls,false
+591,30,2022-07-30,Zucchini - Green,true
+592,66,2022-07-06,Plasticknivesblack,true
+593,16,2022-10-23,Tea - Camomele,false
+594,2,2022-08-23,V8 - Vegetable Cocktail,false
+595,21,2022-07-08,"Pork - Bacon,back Peameal",true
+596,98,2022-07-19,Appetizer - Smoked Salmon / Dill,false
+597,21,2022-04-22,Beef - Eye Of Round,true
+598,55,2022-04-24,Cheese - Goat,false
+599,90,2022-04-02,Veal - Slab Bacon,false
+600,9,2022-01-21,Tumeric,false
+601,65,2022-12-11,Beer - Mcauslan Apricot,false
+602,51,2022-09-14,"Soup - Campbells, Lentil",true
+603,37,2022-10-10,Pomegranates,true
+604,9,2022-03-04,"Arctic Char - Fresh, Whole",true
+605,79,2022-11-24,Wine - Cave Springs Dry Riesling,true
+606,99,2022-05-03,Cookie Dough - Peanut Butter,false
+607,98,2022-01-15,Cheese - Mascarpone,true
+608,90,2022-01-12,"Pasta - Gnocchi, Potato",true
+609,41,2022-11-04,Cake - Night And Day Choclate,true
+610,29,2022-04-12,Milk - Buttermilk,true
+611,76,2022-02-23,"Garlic - Primerba, Paste",true
+612,30,2022-02-15,Lobster - Canned Premium,false
+613,23,2022-11-10,"Veal - Inside Round / Top, Lean",true
+614,50,2022-09-20,Soup - Boston Clam Chowder,false
+615,86,2022-05-28,Cup - Translucent 7 Oz Clear,true
+616,7,2022-09-21,Liners - Baking Cups,true
+617,33,2022-07-12,"Pasta - Penne, Lisce, Dry",false
+618,28,2022-01-08,Lobster - Tail 6 Oz,true
+619,38,2022-03-22,Lighter - Bbq,false
+620,97,2022-07-03,"Lamb - Whole, Frozen",true
+621,11,2022-01-25,Broom - Push,false
+622,71,2022-05-25,Beer - Tetleys,true
+623,85,2022-07-26,Icecream Cone - Areo Chocolate,true
+624,12,2022-04-08,Pastrami,false
+625,98,2022-03-21,"Juice - Cranberry, 341 Ml",true
+626,21,2022-10-16,Bread - Pumpernickel,false
+627,86,2022-10-26,Ecolab - Ster Bac,true
+628,13,2022-02-14,Wine - Fontanafredda Barolo,false
+629,9,2022-12-25,"Crush - Orange, 355ml",false
+630,2,2022-07-14,Wine - Merlot Vina Carmen,true
+631,57,2022-04-21,Asparagus - Mexican,true
+632,6,2022-08-14,Veal - Osso Bucco,true
+633,47,2022-09-03,Beef - Short Ribs,true
+634,88,2022-05-06,Fib N9 - Prague Powder,false
+635,41,2022-03-11,Crab - Imitation Flakes,true
+636,41,2022-05-13,Pastry - French Mini Assorted,false
+637,97,2022-11-15,Sage - Rubbed,true
+638,83,2022-07-30,Irish Cream - Butterscotch,true
+639,65,2022-02-03,Pop Shoppe Cream Soda,false
+640,94,2022-09-07,Sesame Seed,true
+641,64,2022-01-14,Soup - Campbells,false
+642,65,2022-10-12,V8 - Tropical Blend,false
+643,35,2022-09-04,Wine - Zinfandel Rosenblum,false
+644,36,2022-12-26,Shark - Loin,false
+645,42,2022-08-02,Wine - Coteaux Du Tricastin Ac,true
+646,93,2022-05-09,Wine - Puligny Montrachet A.,true
+647,24,2022-06-05,Duck - Fat,true
+648,75,2022-10-04,Wine - Peller Estates Late,true
+649,68,2022-01-14,Sesame Seed,true
+650,69,2022-12-07,Relish,true
+651,56,2022-04-04,"Soup - Beef, Base Mix",true
+652,42,2022-09-03,Rootbeer,false
+653,83,2022-02-18,Coffee - Cafe Moreno,true
+654,40,2022-02-02,Wine - Toasted Head,true
+655,98,2022-03-06,Wine - Sauvignon Blanc,true
+656,49,2022-12-18,Curry Powder,true
+657,16,2022-07-11,Sauce - Vodka Blush,false
+658,27,2022-08-17,Sugar - Fine,true
+659,11,2022-02-19,Wine - Periguita Fonseca,false
+660,46,2022-07-23,Lettuce - Baby Salad Greens,true
+661,56,2022-05-24,Mince Meat - Filling,true
+662,20,2022-11-08,Shrimp - Tiger 21/25,true
+663,24,2022-02-08,Tea - Apple Green Tea,false
+664,13,2022-03-14,Bar Nature Valley,true
+665,74,2022-12-15,Sausage - Meat,true
+666,76,2022-03-03,Grenadillo,false
+667,85,2022-06-05,Cinnamon Buns Sticky,false
+668,5,2022-09-28,Tomato Paste,false
+669,72,2022-03-05,Wine - Fume Blanc Fetzer,false
+670,13,2022-07-18,Lid - 3oz Med Rec,true
+671,68,2022-07-27,Sobe - Lizard Fuel,false
+672,61,2022-09-07,Cheese Cloth No 100,false
+673,3,2022-05-01,"Turkey - Breast, Smoked",true
+674,8,2022-02-20,Extract - Almond,false
+675,92,2022-06-26,Juice - Lime,false
+676,56,2022-01-28,Cheese - Brie,false
+677,1,2022-02-18,Squash - Pepper,true
+678,43,2022-06-09,"Cheese - Mozzarella, Buffalo",false
+679,94,2022-09-20,Pickle - Dill,false
+680,9,2022-09-09,Sage Derby,true
+681,85,2022-12-14,Tofu - Soft,true
+682,37,2022-04-14,Beef - Rib Eye Aaa,true
+683,99,2022-05-23,Beef - Eye Of Round,false
+684,28,2022-02-17,Rabbit - Legs,true
+685,24,2022-10-16,"Chicken - Base, Ultimate",true
+686,24,2022-12-04,Jolt Cola - Electric Blue,true
+687,18,2022-04-17,Appetizer - Veg Assortment,false
+688,95,2022-02-13,Sunflower Seed Raw,false
+689,78,2022-01-11,Cocoa Powder - Natural,false
+690,89,2022-11-11,Veal - Bones,true
+691,49,2022-01-03,Sage Derby,false
+692,54,2022-10-06,Ham - Virginia,true
+693,16,2022-01-03,Island Oasis - Lemonade,false
+694,9,2022-03-12,"Vermouth - Sweet, Cinzano",true
+695,91,2022-10-31,Cream Of Tartar,false
+696,49,2022-09-29,Calypso - Strawberry Lemonade,true
+697,40,2022-01-29,Extract - Rum,false
+698,29,2022-09-07,Chinese Foods - Cantonese,true
+699,97,2022-08-07,Veal - Loin,false
+700,40,2022-12-22,Beef - Montreal Smoked Brisket,true
+701,26,2022-08-19,"Potatoes - Yukon Gold, 80 Ct",true
+702,89,2022-02-21,"Sauce - White, Mix",true
+703,56,2022-09-24,Creme De Banane - Marie,false
+704,13,2022-05-10,Raspberries - Frozen,false
+705,56,2022-02-21,Chicken Thigh - Bone Out,false
+706,22,2022-02-02,"Chicken - Base, Ultimate",false
+707,98,2022-01-08,Chinese Foods - Thick Noodles,true
+708,32,2022-04-05,Jack Daniels,false
+709,83,2022-10-17,Sunflower Seed Raw,true
+710,12,2022-09-12,"Juice - Apple, 500 Ml",false
+711,15,2022-08-09,Food Colouring - Pink,true
+712,5,2022-06-07,Hummus - Spread,false
+713,71,2022-12-23,Pea - Snow,true
+714,40,2022-10-07,Island Oasis - Banana Daiquiri,true
+715,85,2022-06-19,Soup - Base Broth Beef,true
+716,41,2022-11-10,Venison - Striploin,false
+717,7,2022-04-22,Wine - Sauvignon Blanc,true
+718,82,2022-07-30,"Asparagus - White, Canned",false
+719,13,2022-02-27,Steamers White,true
+720,13,2022-07-18,Pork Loin Bine - In Frenched,false
+721,27,2022-03-01,Oil - Hazelnut,true
+722,50,2022-03-28,"Juice - Apple, 500 Ml",true
+723,6,2022-01-11,Cheese - Pont Couvert,true
+724,76,2022-04-25,Beans - Soya Bean,true
+725,37,2022-11-23,Wine - Port Late Bottled Vintage,true
+726,54,2022-12-20,Mushroom - Chanterelle Frozen,false
+727,24,2022-11-10,Garbage Bags - Clear,true
+728,15,2022-03-26,Triple Sec - Mcguinness,false
+729,40,2022-11-01,Extract - Lemon,true
+730,30,2022-12-24,Ecolab - Hobart Washarm End Cap,false
+731,7,2022-02-27,Beer - Mill St Organic,false
+732,72,2022-09-19,"Soup - Campbells, Creamy",false
+733,87,2022-06-03,Water Chestnut - Canned,false
+734,33,2022-12-24,French Pastry - Mini Chocolate,false
+735,79,2022-10-29,Nantucket - Pomegranate Pear,true
+736,6,2022-01-19,Milk - Buttermilk,false
+737,78,2022-05-22,Frangelico,false
+738,17,2022-03-07,"Sauce - Gravy, Au Jus, Mix",false
+739,47,2022-10-13,Pork - Inside,false
+740,80,2022-11-13,"Beef - Chuck, Boneless",true
+741,74,2022-02-02,Mustard Prepared,false
+742,97,2022-03-21,Jameson Irish Whiskey,false
+743,42,2022-04-13,"Gin - Gilbeys London, Dry",true
+744,29,2022-09-24,Table Cloth 54x72 White,false
+745,7,2022-09-05,Filling - Mince Meat,true
+746,88,2022-07-06,"Wine - White, Ej Gallo",false
+747,48,2022-09-18,"Juice - Orange, 341 Ml",false
+748,87,2022-08-11,Wine - Delicato Merlot,true
+749,79,2022-07-26,Piping Jelly - All Colours,true
+750,24,2022-08-25,Mushrooms - Honey,false
+751,58,2022-08-02,Appetizer - Mango Chevre,true
+752,68,2022-08-21,Wine - Segura Viudas Aria Brut,false
+753,43,2022-09-17,"Nut - Hazelnut, Whole",true
+754,98,2022-06-25,Cape Capensis - Fillet,true
+755,48,2022-10-04,Beer - Mcauslan Apricot,false
+756,86,2022-11-11,Sauce - Ranch Dressing,true
+757,2,2022-03-05,Salt - Seasoned,true
+758,73,2022-01-18,Cookies Almond Hazelnut,false
+759,84,2022-02-12,Carrots - Jumbo,true
+760,98,2022-12-26,Wine - Ej Gallo Sierra Valley,true
+761,40,2022-03-10,"Tortillas - Flour, 12",false
+762,71,2022-02-24,"Beef - Bones, Marrow",true
+763,38,2022-03-22,Yoghurt Tubes,true
+764,57,2022-03-10,"Pasta - Fusili, Dry",false
+765,43,2022-06-18,Cake - Lemon Chiffon,true
+766,12,2022-09-04,Coffee - Almond Amaretto,true
+767,9,2022-08-26,Truffle - Peelings,false
+768,16,2022-12-17,Pork - Smoked Back Bacon,true
+769,31,2022-04-03,"Water, Tap",true
+770,17,2022-08-16,Flavouring Vanilla Artificial,true
+771,39,2022-10-10,Cheese - Gouda,true
+772,4,2022-11-27,Soup - Campbells Beef Stew,false
+773,51,2022-08-17,Ham - Cooked Italian,false
+774,10,2022-08-11,Oil - Grapeseed Oil,false
+775,79,2022-07-20,"Beef - Chuck, Boneless",false
+776,38,2022-02-24,Tea - Lemon Scented,true
+777,71,2022-01-02,Chocolate Bar - Reese Pieces,false
+778,83,2022-06-15,Mayonnaise,false
+779,58,2022-08-19,Whmis Spray Bottle Graduated,false
+780,23,2022-08-25,"Chilli Paste, Hot Sambal Oelek",true
+781,52,2022-08-31,"Crab - Claws, 26 - 30",true
+782,6,2022-01-24,Wine - Conde De Valdemar,false
+783,95,2022-06-28,"Sauce - Gravy, Au Jus, Mix",true
+784,61,2022-09-14,Sherbet - Raspberry,false
+785,1,2022-06-10,Soup - Campbells Tomato Ravioli,true
+786,16,2022-12-19,Easy Off Oven Cleaner,true
+787,40,2022-01-08,Walkers Special Old Whiskey,true
+788,17,2022-02-27,Monkfish - Fresh,false
+789,57,2022-12-27,Oil - Grapeseed Oil,false
+790,91,2022-09-20,Noodles - Steamed Chow Mein,false
+791,20,2022-12-01,Beer - Heinekin,true
+792,56,2022-05-15,"Roe - Lump Fish, Black",false
+793,5,2022-03-26,Pasta - Ravioli,true
+794,11,2022-01-12,Milk - 2% 250 Ml,true
+795,26,2022-12-02,Containter - 3oz Microwave Rect.,false
+796,87,2022-07-27,Pastry - Trippleberry Muffin - Mini,false
+797,1,2022-11-28,Beans - Yellow,true
+798,26,2022-07-14,Pork - Ham Hocks - Smoked,true
+799,37,2022-07-07,Veal - Eye Of Round,true
+800,99,2022-09-06,Melon - Honey Dew,false
+801,58,2022-05-22,Wasabi Paste,false
+802,77,2022-06-23,"Beef - Roasted, Cooked",true
+803,59,2022-10-29,Tea - Herbal - 6 Asst,true
+804,46,2022-01-30,"Pork - Ham, Virginia",false
+805,31,2022-04-14,Tomatoes - Roma,true
+806,100,2022-08-25,"Rum - Dark, Bacardi, Black",true
+807,4,2022-02-13,Brandy - Bar,false
+808,89,2022-07-05,Corn - On The Cob,true
+809,27,2022-02-23,Oil - Peanut,false
+810,94,2022-10-14,"Pepper - White, Ground",true
+811,20,2022-03-15,Herb Du Provence - Primerba,false
+812,42,2022-01-25,Cookie Choc,true
+813,40,2022-07-04,Sauce - Mint,true
+814,36,2022-07-19,Sauce - Hp,false
+815,73,2022-05-21,"Stock - Veal, Brown",true
+816,75,2022-07-12,Mustard - Pommery,true
+817,97,2022-12-21,Ostrich - Fan Fillet,false
+818,75,2022-04-16,Pastrami,true
+819,88,2022-10-07,Napkin White,true
+820,20,2022-11-13,Bread Roll Foccacia,true
+821,19,2022-05-15,Wine - Periguita Fonseca,false
+822,75,2022-02-21,Creme De Menth - White,true
+823,63,2022-06-30,"Tabasco Sauce, 2 Oz",false
+824,7,2022-02-10,"Marjoram - Dried, Rubbed",false
+825,7,2022-08-03,Ecolab - Medallion,false
+826,91,2022-11-25,"Pail - 15l White, With Handle",true
+827,60,2022-08-15,"Tarragon - Primerba, Paste",false
+828,59,2022-05-28,"Onions - Dried, Chopped",false
+829,75,2022-08-10,Tomatoes - Grape,false
+830,39,2022-06-07,Wine - Acient Coast Caberne,false
+831,23,2022-05-16,Salt And Pepper Mix - Black,true
+832,9,2022-08-07,Crab Brie In Phyllo,false
+833,8,2022-06-07,Pears - Fiorelle,true
+834,46,2022-12-26,Wine - Spumante Bambino White,false
+835,3,2022-04-24,Goat - Leg,true
+836,28,2022-06-12,Instant Coffee,true
+837,70,2022-09-05,Wine - Saint Emilion Calvet,true
+838,61,2022-12-20,"Juice - Orange, 341 Ml",true
+839,45,2022-01-09,"Carrots - Mini, Stem On",false
+840,53,2022-04-27,Instant Coffee,false
+841,39,2022-12-28,"Pasta - Lasagna, Dry",false
+842,35,2022-04-05,"Jam - Blackberry, 20 Ml Jar",true
+843,31,2022-10-12,Veal Inside - Provimi,false
+844,9,2022-05-15,Juice - Orangina,false
+845,67,2022-01-09,"Liners - Banana, Paper",false
+846,80,2022-06-27,Fond - Neutral,true
+847,31,2022-02-07,Cream - 10%,true
+848,22,2022-10-11,Longos - Grilled Salmon With Bbq,false
+849,38,2022-01-28,Carbonated Water - Orange,true
+850,54,2022-09-02,Chips - Potato Jalapeno,true
+851,50,2022-01-03,Jolt Cola,false
+852,23,2022-10-30,Wine - Fontanafredda Barolo,true
+853,62,2022-07-09,Appetizer - Lobster Phyllo Roll,false
+854,20,2022-06-29,Wine - Port Late Bottled Vintage,false
+855,8,2022-05-24,Cream Of Tartar,false
+856,24,2022-01-14,Pork - Suckling Pig,true
+857,29,2022-10-13,Beer - Upper Canada Light,false
+858,59,2022-04-28,Shrimp - 100 / 200 Cold Water,true
+859,28,2022-02-16,Lid Coffeecup 12oz D9542b,true
+860,99,2022-05-12,Apricots - Dried,false
+861,40,2022-06-17,"Wine - Red, Lurton Merlot De",true
+862,58,2022-05-31,"Wine - White, Concha Y Toro",false
+863,41,2022-12-28,Bread - Hamburger Buns,false
+864,91,2022-07-15,Apple - Royal Gala,true
+865,47,2022-03-31,Water - San Pellegrino,false
+866,7,2022-08-01,Chicken - Bones,true
+867,86,2022-10-16,Soup - Campbells Pasta Fagioli,false
+868,30,2022-01-15,Allspice - Jamaican,false
+869,13,2022-07-22,Tumeric,true
+870,38,2022-07-06,"Beans - Black Bean, Canned",false
+871,85,2022-10-07,"Nut - Cashews, Whole, Raw",false
+872,68,2022-11-05,Oil - Grapeseed Oil,true
+873,29,2022-10-07,Goat - Leg,false
+874,97,2022-09-25,Raisin - Dark,true
+875,89,2022-09-11,Lamb Rack - Ontario,true
+876,36,2022-10-27,"Flour - Corn, Fine",false
+877,55,2022-08-24,Beer - Corona,false
+878,52,2022-09-04,"Veal - Insides, Grains",false
+879,50,2022-12-03,"Tuna - Canned, Flaked, Light",false
+880,89,2022-09-09,Bay Leaf Ground,false
+881,100,2022-09-08,Swiss Chard,false
+882,94,2022-06-12,Pork - Back Ribs,true
+883,90,2022-04-04,"Juice - Tomato, 48 Oz",false
+884,22,2022-12-06,"Juice - Cranberry, 341 Ml",true
+885,30,2022-07-31,Muffin Orange Individual,true
+886,68,2021-12-29,Canadian Emmenthal,true
+887,51,2022-05-15,Wine - Masi Valpolocell,false
+888,12,2022-08-30,Beef - Texas Style Burger,false
+889,98,2022-06-11,Water - Aquafina Vitamin,false
+890,9,2022-05-04,Thermometer Digital,true
+891,46,2022-01-28,Island Oasis - Lemonade,true
+892,25,2022-09-24,Beets - Mini Golden,true
+893,51,2022-03-16,Bouillion - Fish,true
+894,58,2022-07-05,Lettuce - Spring Mix,false
+895,46,2022-02-28,Soup - French Onion,true
+896,7,2022-09-29,Scampi Tail,true
+897,45,2022-01-10,Chips Potato Swt Chilli Sour,false
+898,30,2022-03-27,Sauce - Chili,false
+899,84,2022-09-24,Mcgillicuddy Vanilla Schnap,true
+900,79,2022-10-19,Beer - Muskoka Cream Ale,false
+901,23,2022-05-12,Veal - Liver,true
+902,68,2022-08-28,English Muffin,false
+903,92,2022-11-25,Chickhen - Chicken Phyllo,true
+904,61,2022-12-12,Syrup - Pancake,false
+905,95,2022-04-30,Longan,true
+906,62,2022-01-09,Tea - Herbal Sweet Dreams,true
+907,56,2022-04-17,Miso - Soy Bean Paste,false
+908,82,2022-02-22,Mustard - Pommery,false
+909,82,2022-03-27,Plasticforkblack,true
+910,19,2022-07-25,Food Colouring - Red,false
+911,43,2022-09-06,"Fish - Halibut, Cold Smoked",true
+912,78,2022-10-15,Crackers - Trio,false
+913,94,2022-09-17,"Vinegar - Balsamic, White",false
+914,8,2022-08-04,Lamb - Bones,true
+915,84,2022-06-06,Flour - Bread,false
+916,80,2022-09-04,Wine - Shiraz South Eastern,true
+917,4,2022-04-07,Table Cloth 90x90 Colour,true
+918,79,2022-12-14,"Shrimp - 16/20, Iqf, Shell On",false
+919,13,2022-05-19,Vinegar - Balsamic,false
+920,35,2022-05-17,"Soup - Campbells, Creamy",true
+921,35,2022-01-04,Energy Drink Bawls,false
+922,28,2022-08-16,Mussels - Cultivated,false
+923,76,2022-01-01,Sauce - Hollandaise,true
+924,84,2022-03-06,"Crab - Claws, Snow 16 - 24",false
+925,7,2022-10-05,"Salmon - Smoked, Sliced",true
+926,75,2022-05-10,Cauliflower,true
+927,15,2022-11-24,Kippers - Smoked,false
+928,6,2022-06-19,Plasticforkblack,false
+929,93,2022-05-18,Bag Clear 10 Lb,false
+930,4,2022-01-16,Sugar - Crumb,false
+931,91,2022-07-29,Whmis - Spray Bottle Trigger,false
+932,32,2022-11-15,"Pail - 15l White, With Handle",true
+933,49,2022-12-10,Yogurt - Plain,true
+934,67,2022-01-17,Spinach - Spinach Leaf,true
+935,22,2022-07-03,Mix Pina Colada,true
+936,36,2022-03-30,Soup - Boston Clam Chowder,true
+937,23,2022-04-15,Milk - 2% 250 Ml,true
+938,20,2022-12-11,"Sauce - Soya, Light",true
+939,51,2022-09-14,The Pop Shoppe - Cream Soda,false
+940,87,2022-09-06,Amaretto,true
+941,16,2022-09-25,Shrimp - Tiger 21/25,true
+942,67,2022-09-26,Onions - Cippolini,true
+943,80,2022-04-11,"Chicken - Base, Ultimate",true
+944,22,2022-08-27,Rabbit - Whole,false
+945,74,2022-05-20,"Turkey - Breast, Bone - In",true
+946,34,2022-09-24,Muffin Mix - Blueberry,true
+947,77,2022-02-04,Lemon Balm - Fresh,true
+948,91,2022-02-09,Cardamon Ground,false
+949,56,2022-09-13,"Wine - Red, Lurton Merlot De",true
+950,95,2022-07-02,"Fish - Halibut, Cold Smoked",true
+951,81,2022-01-14,Gatorade - Fruit Punch,false
+952,45,2022-07-18,"Lettuce - Romaine, Heart",true
+953,76,2022-05-09,"Oil - Food, Lacquer Spray",true
+954,24,2022-09-28,"Pasta - Elbows, Macaroni, Dry",false
+955,5,2022-12-12,Anchovy In Oil,false
+956,92,2022-10-15,Jolt Cola,false
+957,70,2022-02-04,"Chocolate - Milk, Callets",false
+958,43,2022-04-26,Eel Fresh,true
+959,32,2022-09-17,Chicken - Whole Fryers,true
+960,63,2022-03-01,Rice - Aborio,true
+961,11,2022-05-04,Sauce Bbq Smokey,true
+962,10,2022-05-02,Longos - Assorted Sandwich,false
+963,60,2022-06-28,"Flour - Corn, Fine",true
+964,6,2022-08-18,"Pork - Loin, Center Cut",false
+965,95,2022-04-10,Cheese - Grie Des Champ,true
+966,90,2022-12-07,"Melon - Watermelon, Seedless",true
+967,54,2022-11-28,Cucumber - English,false
+968,91,2022-08-17,Sobe - Green Tea,false
+969,10,2022-04-12,Vacuum Bags 12x16,true
+970,97,2022-04-10,Gherkin,true
+971,15,2022-10-12,Gelatine Leaves - Bulk,true
+972,24,2022-02-21,Juice - Lime,false
+973,59,2022-09-09,Pop - Club Soda Can,false
+974,16,2022-10-11,Jicama,false
+975,76,2022-05-18,Chip - Potato Dill Pickle,false
+976,50,2022-08-13,Hog / Sausage Casing - Pork,false
+977,62,2022-03-11,Potatoes - Parissienne,false
+978,37,2022-02-09,Cheese - Comtomme,false
+979,14,2022-07-28,Paper Cocktail Umberlla 80 - 180,false
+980,9,2022-11-11,Wine - Kwv Chenin Blanc South,true
+981,25,2022-01-01,Muffin Orange Individual,false
+982,12,2022-09-04,"Champagne - Brights, Dry",true
+983,91,2022-05-22,Pepperoni Slices,false
+984,5,2022-03-04,"Salmon - Smoked, Sliced",false
+985,53,2022-10-31,Coffee Decaf Colombian,false
+986,37,2022-02-20,Mangoes,false
+987,89,2022-03-29,"Tomatoes - Cherry, Yellow",true
+988,65,2022-06-29,Pumpkin - Seed,true
+989,77,2022-06-03,Baking Powder,true
+990,58,2022-09-19,Pie Filling - Pumpkin,false
+991,58,2022-09-06,Beef - Short Ribs,false
+992,25,2022-03-03,Muffin Mix - Corn Harvest,true
+993,52,2022-02-17,Wine - Beringer Founders Estate,true
+994,58,2022-06-05,Bay Leaf Ground,true
+995,27,2022-09-21,"Loaf Pan - 2 Lb, Foil",true
+996,75,2022-10-22,Squid - Tubes / Tenticles 10/20,true
+997,95,2022-09-06,Soup - Chicken And Wild Rice,false
+998,30,2022-01-24,Pate - Peppercorn,true
+999,57,2022-08-13,Cake - Mini Cheesecake,true
+1000,72,2022-08-04,Cloves - Ground,false
