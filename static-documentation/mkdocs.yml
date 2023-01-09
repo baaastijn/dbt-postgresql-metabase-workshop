@@ -1,6 +1,0 @@
-site_name: Workshop home
-site_url: ""
-nav:
-    - Github Repository (fake data, exercises): https://github.com/baaastijn/dbt-postgresql-metabase-workshop
-    - Workshop steps: index.md
-theme: readthedocs
