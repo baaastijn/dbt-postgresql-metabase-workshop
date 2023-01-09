@@ -1,0 +1,4 @@
+Markdown==3.3.7
+MarkupSafe==2.0.1
+mkdocs==1.4.2
+text-unidecode==1.3
