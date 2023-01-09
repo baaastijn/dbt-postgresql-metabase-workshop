@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Workshop home</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Workshop steps";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> Workshop home
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://github.com/baaastijn/dbt-postgresql-metabase-workshop">Github Repository (fake data, exercises)</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Workshop steps</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#hello-what-are-we-going-to-do-tonight-brain">Hello! What are we going to do tonight, Brain?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#discovering-awesome-open-source-data-tools">Discovering awesome open source data tools</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#building-your-first-analytics-platform">Building your first analytics platform</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#time-and-cost">Time and cost</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#part-1-setup-your-environment">Part 1: setup your environment</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cloud-or-not-cloud-chose-wisely">Cloud or not cloud? Chose wisely!</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-optional-prepare-a-cloud-python-environment">Step 1: (optional) prepare a cloud Python environment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-check-your-python-environment">Step 2: check your python environment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-set-up-a-postgresql-cluster">Step 3: set up a PostgreSQL cluster</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#option-1-launch-an-ovhcloud-postgresql-cluster">Option 1: launch an OVHcloud PostgreSQL cluster</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#option-2-manual-installation-self-hosted">Option 2: manual installation (self-hosted)</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#part-2-setup-dbt">Part 2: Setup DBT</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-the-hell-is-dbt">What the hell is DBT ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-dbt">Install DBT</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-your-first-project">Create your first project</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connect-dbt-to-your-postgresql-cluster">Connect DBT to your PostgreSQL cluster</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test-your-environment">Test your environment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#perform-a-first-dummy-dbt-run">Perform a first dummy DBT run</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#part-3-ingest-data-badly">Part 3: ingest data (badly)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#about-dbt-and-seeds">About DBT and seeds</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ingest-fake-data">Ingest fake data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#part-4-transform-data-with-dbt-models">Part 4: transform data with DBT models</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#create-your-first-sql-model">Create your first SQL model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reconfigure-your-project">Reconfigure your project</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run-dbt">Run DBT</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#check-the-result-in-your-datawarehouse">Check the result in your datawarehouse</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-1-build-another-dbt-model-wink">Exercise 1: build another DBT model :wink:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-2-remove-suspicious-accounts">Exercise 2: remove suspicious accounts</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#generate-documentation">Generate documentation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#thats-a-one-small-step-for-man-but">That's a one small step for man, but...</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#part-5-visualize-your-data-with-metabase">Part 5 : Visualize your data with Metabase</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#why-metabase-is-so-cool">Why Metabase is so cool ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-metabase">Install Metabase</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#option-1-install-metabase-with-desktop-jar-version">Option 1: install metabase with desktop JAR version</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#option-2-install-metabase-via-docker-in-the-cloud">Option 2: Install metabase via Docker in the cloud</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connect-your-datawarehouse-to-metabase">Connect your datawarehouse to metabase</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#build-awesome-dashboards">Build awesome dashboards</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#query-your-data">Query your data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#add-a-visualization-to-the-dashboard">Add a visualization to the dashboard</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exercise-3-build-your-first-dashboard">Exercise 3: build your first dashboard</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#done-you-just-built-a-first-bi-platform">Done! You just built a first BI platform</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional resources</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">Workshop home</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Workshop steps</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="dbt-postgresql-metabase-a-first-analytics-platform">DBT + PostgreSQL + Metabase = a first analytics platform</h1>
+<p>Step by step workshop to build a first modern analytics platform with DBT, PostgreSQL and Metabase.
+Only open source tools, and can be hosted locally on your computer or in the cloud!</p>
+<p><img alt="Twitter URL" src="https://img.shields.io/twitter/url?label=Author&amp;style=social&amp;url=https%3A%2F%2Ftwitter.com%2FBastienOvh" /></p>
+<p><a href="https://github.com/baaastijn/dbt-postgresql-metabase-workshop">Linked Github Repository (fake data sample, exercises)</a>.</p>
+<h2 id="hello-what-are-we-going-to-do-tonight-brain">Hello! <em>What are we going to do tonight, Brain?</em></h2>
+<h3 id="discovering-awesome-open-source-data-tools">Discovering awesome open source data tools</h3>
+<p>Initial goal is to have fun discovering some of most notorious modern data tools, with a typical use-case : analyze your orders and customers.</p>
+<p>The BI platform pipeline that we will create is similar to this schema, whith dashboards as outputs: </p>
+<p><img alt="first BI platform" src="img/dbt-postgresql-metabase.png" /></p>
+<p>Over the years, DBT has trusted the charts as the "transformation workflow" tool, same for Metabase as business intelligence tool. They work pretty well together, and are seen in many production architectures.</p>
+<p>The last piece of data software that we will discover is PostgreSQL, who will act as a datawarehouse.
+While Clickhouse, Google BigQuery or Snowflake might have been excellent choices for an analytical production platform, I selected PostgreSQL because it can be installed locally with zero expenses, and is a perfect fit for our light and standard needs.</p>
+<h3 id="building-your-first-analytics-platform">Building your first analytics platform</h3>
+<p>Over this workshop, you will get a first introduction to DBT and Metabase features.</p>
+<p>Our use case is quite simple: we are a company, with customers, orders and payments.
+We want to build nice visualization dashboards, to monitor closely our activity.</p>
+<p>More than dashboards, we want to avoid black magic, avoid technical debt, and for that we will use DBT to introduce best practive for analytics.</p>
+<p>What this workshop is not : it's not an intensive worshop for experts, neither something to follow for best practices (it's more the opposite since we will skip few phases like Git synchonization, DBT, tests).</p>
+<h3 id="time-and-cost">Time and cost</h3>
+<p><strong>Expected time for this workshop</strong> : it depends of your skills. If you are new to the cloud, let's say 4-5 hours.
+If your have cloud/tech experience, +-2 hours.</p>
+<p><strong>Cost</strong> : <strong>free</strong> if you run everything locally. </p>
+<p>In the cloud, more or less 3 euros for 24h in OVHcloud:</p>
+<ul>
+<li>AI Notebook (DBT host): 24h x 0,03 € = 0,72€</li>
+<li>PostgreSQL managed database: 24h x 0,07€ = 1,68€</li>
+<li>VM instance (metabase host): 24h x 0,0088€ = 0,021€</li>
+</ul>
+<p>Ready? See you in few hours!</p>
+<h2 id="part-1-setup-your-environment">Part 1: setup your environment</h2>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>A Python &gt;= 3.8 environment with ability to install new packages such as DBT</li>
+<li>A PostgreSQL client to query a PostgreSQL database (like psql or PgAdmin)</li>
+<li>Ability to run Docker images (locally or in the cloud) or execute JAR file (for Metabase installation)</li>
+<li>basic technical skills such as building a SQL query, connect with SSH, ...</li>
+</ul>
+<h3 id="cloud-or-not-cloud-chose-wisely">Cloud or not cloud? Chose wisely!</h3>
+<p>As mentionned in requirements, this workshop will require to install few things such as DBT (Python package), a PostgreSQL client and Metabase (Docker image for the easiest installation way).</p>
+<p>You can opt to install everything locally on your computer if you have enough access rights to do it.</p>
+<p>You can also prefer to use cloud products such as virtual machines or Python Notebook.
+The main advantage for this method is the ability to start with a clean development environment, and be able to delete safely everything at the end. Also, if you don't have admin on your own computer, it will be easier.</p>
+<p>On the dark side, it can be seen as a bit complex if your are new with cloud. So, chose wisely!</p>
+<p><strong>For the next step, we will go for cloud products with OVHcloud</strong>, a european cloud provider:
+- Database: OVHcloud PostgreSQL (AWS doppeldanger : RDS for PostgreSQL)
+- DBT: installed in a OVHcloud Jypter Notebook (AWS : Sagemaker Notebook)
+- Metabase: installed in a OVHcloud virtual Machine (AWS : EC2 VM)</p>
+<p>From an architecture perspective, it will look like this in the cloud:</p>
+<p><img alt="This is an image" src="img/infra.workshop.dbt.png" /></p>
+<h3 id="step-1-optional-prepare-a-cloud-python-environment">Step 1: (optional) prepare a cloud Python environment</h3>
+<blockquote>
+<p>:information_source: As explained previously, we will use cloud products in this workshop. It's optional, <strong>you can skip this step if you prefer to use your own Python environment (your computer for example)</strong>.</p>
+</blockquote>
+<p>This workshop needs a Python environment, with the ability to browse files easily.
+To be more visual and practical, we will opt for a Python notebook code editor. Most used ones in the world are JupyterLab and VSCode. We will create one in the cloud now.</p>
+<p>If required, create an OVHcloud free account or log in: </p>
+<ol>
+<li>Log in OVHcloud control panel : <a href="https://www.ovhcloud.com">https://www.ovhcloud.com</a>.</li>
+<li>Go to Public Cloud section in the top menu.</li>
+<li>Create a new project if required.</li>
+</ol>
+<p>Once your project is created, create a new AI Notebook with these parameters:</p>
+<ul>
+<li><strong>name</strong>: dbt-notebook  </li>
+<li><strong>code editor</strong>: Jupyter lab</li>
+<li><strong>Framework</strong>: Miniconda with python &gt;=3.8</li>
+<li><strong>Privacy</strong>: public access (anyone will have access to it. useful for a workshop, NOT recommended for production or sensitive information)</li>
+<li><strong>Datacenter</strong>: as you wish</li>
+<li><strong>Resource</strong>: CPU x1</li>
+<li><strong>Attach a git repo or data container</strong>: no</li>
+<li><strong>SSH key</strong>: no</li>
+</ul>
+<p>Once your notebook is running (it should take less than 1 minute), you can access it by clicking on <code>JupyterLab</code> button.</p>
+<p><img alt="AI Notebook - JupyterLab button" src="img/notebook1.png" /></p>
+<p>This notebook is a Linux environment running inside a Docker image. It gives you the ability to live code directly in your web browser. You can install additional package swith classic Python commands such as <code>pip install</code>and <code>conda install</code>. 
+Also, you can share your environment with someone else just by sharing your notebook URL. Very useful during a workshop session when you need some help :wink:.</p>
+<p>Now, click on the <code>Terminal</code> icon inside this notebook.
+<img alt="AI Notebook - Terminal button" src="img/notebook2.png" /></p>
+<h3 id="step-2-check-your-python-environment">Step 2: check your python environment</h3>
+<p>This tutorial requires Python &gt;= 3.8.
+To check your current Python environment, type in a terminal:</p>
+<pre><code class="language-python">$ python --version
+Python 3.9.5
+</code></pre>
+<p>Mine is on version 3.9.5. If you have a deprecated version, please upgrade it at least to &gt;=3.8.</p>
+<blockquote>
+<p>:bulb: A best practice is to create a new python environment with Conda. In this workshop, we will not since we are creating a new linux environment that we will trash just after. But feel free to do it, especially with local installation.</p>
+</blockquote>
+<h3 id="step-3-set-up-a-postgresql-cluster">Step 3: set up a PostgreSQL cluster</h3>
+<p>For this workshop, we will use a PostreSQL cluster to store and transform our data.</p>
+<p>PostgreSQL is an open source and community-based transactional database management system, widely used accross the world. Perfect for a workshop but also for production. It has not the flexibily of modern lakehouse such as Snowflake or BigQuery (compute and storage are linked for example, and information is stored in row format, not columnar) but can be relevant in many Business Intelligence use-cases where performance is not the main criteria.</p>
+<p>To setup a new cluster, two solutions:</p>
+<ul>
+<li>Use a managed Cloud Product such as OVHcloud for PostreSQL (paid).</li>
+<li>install yourself a PostgreSQL somewhere (eg. your computer, free).</li>
+</ul>
+<h4 id="option-1-launch-an-ovhcloud-postgresql-cluster">Option 1: launch an OVHcloud PostgreSQL cluster</h4>
+<p>We will go for a cloud product here:</p>
+<ol>
+<li>Go to OVHcloud control panel.</li>
+<li>Go to Public Cloud section in the top menu.</li>
+<li>Select your project or create a new one.</li>
+</ol>
+<p>If the left menu, select Databases then create a new one with these parameters:</p>
+<ul>
+<li><strong>Database type</strong>: PostgreSQL 14</li>
+<li><strong>Plan</strong>: Essential (1 node)</li>
+<li><strong>Region</strong>: as you wish</li>
+<li><strong>Size of nodes</strong>: smallest one, like DB1-4</li>
+<li><strong>Options / Network</strong>: Public network (open to internet access)</li>
+</ul>
+<p>Launch this database cluster.
+Once this cluster is up and running, you will have to configure users and authorized IPs.</p>
+<p>Go in <code>Users</code> tab, and create a new user. Copy his username and password safely.</p>
+<p>Now go in <code>Authorized IPs</code> and add the IP <strong>0.0.0.0/0</strong>.
+It's a wildcard allowing any IP in the world. </p>
+<blockquote>
+<p>:exclamation: a Wildcard is useful for a workshop or troubleshooting, but not recommended at all for production. Anyone will be able to contact your cluster.</p>
+</blockquote>
+<h4 id="option-2-manual-installation-self-hosted">Option 2: manual installation (self-hosted)</h4>
+<p>If you opt for a manual installation, follow official instructions here: <a href="https://www.postgresql.org/download/">https://www.postgresql.org/download/</a>.
+This workshop was tested with PostgreSQL 14.</p>
+<p>Once installed, configure a new database. 
+You can find alternative websites with detailled tutorials like <a href="https://www.postgresqltutorial.com/postgresql-getting-started/">https://www.postgresqltutorial.com/postgresql-getting-started/</a> to guide you through the steps.</p>
+<h2 id="part-2-setup-dbt">Part 2: Setup DBT</h2>
+<p>Great! OVer the part 1, we setup a Python environment and a datawarehouse.
+It's now time to install the first data software, DBT!</p>
+<h3 id="what-the-hell-is-dbt">What the hell is DBT ?</h3>
+<p>Good question! DBT is the acronym of Data Build Tool and was created in 2016 by some folks of RJMetrics.</p>
+<p>Here is quote from their official website: <em>dbt is a transformation workflow that helps you get more work done while producing higher quality results. You can use dbt to modularize and centralize your analytics code, while also providing your data team with guardrails typically found in software engineering workflows. Collaborate on data models, version them, and test and document your queries before safely deploying them to production, with monitoring and visibility</em>.</p>
+<p>DBT is an answer to all team facing analytics issues. <em>Who made a change on this query?. Where can I find explanation about this data? How can i rollback to the queries made 1 week ago? How can I test safely before running is in production?</em>. You see what I mean. Artisanal mode.</p>
+<p>If I try to sum-up, with data analytics your start with multiple data sources and end up with results, like reports or dashboard. Between sources and results, the workflows you put has to be structured, documented, collaborative, and shared safely.</p>
+<p>We already do that widely for software. If you develop a software, you will push you code on Git, collaborate with branches, do some versioning, document you code directly, build CI/CD pipelines, ... </p>
+<p>Why not doing the same with data analytics ? Software engineering is here since long, now let's embrace analytics engineering! </p>
+<p>DBT is one of the answer :) Don't hesitate to read more with the <a href="https://docs.getdbt.com/community/resources/viewpoint">DBT viewpoint</a>.</p>
+<h3 id="install-dbt">Install DBT</h3>
+<blockquote>
+<p>:bulb: check official documentation for complete guidance : <a href="https://docs.getdbt.com/docs/get-started/installation">https://docs.getdbt.com/docs/get-started/installation</a>.</p>
+</blockquote>
+<p>DBT comes in two versions:</p>
+<ul>
+<li>DBT Core, that you can install yourself as self-hosted. It's free and open source.</li>
+<li>DBT Cloud, where you will get a managed version of DBT, with more features. It's a paid plan.</li>
+</ul>
+<p>We will install <strong>DBT Core</strong> in our case.</p>
+<p>Since we will use DBT with PostgreSQL, we will install DBT Core and DBT PostgreSQL connector at once.</p>
+<p>Go in you Python terminal and type:</p>
+<pre><code class="language-python"># Update PIP to the latest version
+$ python -m pip install --upgrade pip
+(...)
+
+# Install DBT Core and DBT PostgreSQL connector at once
+$ pip install dbt-postgres
+(...)
+
+# Verify versions
+$ dbt --version
+Core:
+  - installed: 1.3.1
+  - latest:    1.3.1 - Up to date!
+
+Plugins:
+  - postgres: 1.3.1 - Up to date!
+</code></pre>
+<h3 id="create-your-first-project">Create your first project</h3>
+<p>DBT works with projects, containing your configuration, SQL models, and much more.</p>
+<p>Create your first one with <code>DBT init</code>:</p>
+<pre><code class="language-python">$ dbt init quick_workshop
+09:47:12  Running with dbt=1.3.1
+09:47:12  Creating dbt configuration folder at /workspace/.dbt
+Which database would you like to use?
+[1] postgres
+(...)
+Your new dbt project &quot;quick_workshop&quot; was created!
+</code></pre>
+<p>2 new folder appeared in your directory, <code>Logs</code>and <code>quick_workshop</code>.</p>
+<p>Move to this project folder with your terminal:</p>
+<pre><code class="language-python"># Go to new project folder
+$ cd quick_workshop
+
+# list content files
+$ ls
+README.md  analyses  dbt_project.yml  macros  models  seeds  snapshots  tests
+</code></pre>
+<p>Congrats, your first project is created!</p>
+<p>Quick descriptions about these directories:
+| Directory | Description |
+| --- | --- |
+| analyses | where you can compile SQL queries, more often for later usage as analytical queries  |
+| macros | blocks of code that you can reause multiple times |
+| models | where you put your code. 1 file = 1 model, and you code quite often transform raw data in datasets or intermediate trandsformations |
+| seeds | Static CSV data that you can load via DBT |
+| snapshots | when you capture the state of your data tables, to refer to it later |
+| tests | SQL/Python tests you can run to validate your data or models. |</p>
+<p>When you initialize a DBT project, there is also the file <code>dbt-project.yml</code>, which contains useful parameters.
+A name, a version, models to build but also a <strong>profile</strong> to use.</p>
+<p>As explained before, <strong>DBT does not process data itself</strong>. There is no compute, no "power". DBT is linked to something doing transformation tasks. Most famous ones are PostreSQL, BigQuery, Snowflake, Spark, ... 
+Here in profile, you can redirect this project to a profile to use.</p>
+<p>Keep it like the screenshot aka <code>quick_workshop</code>.</p>
+<p><img alt="AI Notebook - Terminal button" src="img/dbtproject.png" /></p>
+<h3 id="connect-dbt-to-your-postgresql-cluster">Connect DBT to your PostgreSQL cluster</h3>
+<p>DBT connects to your datawarehouse using a profile, which is a <code>.yml</code> file created during our first project init. You were notified about his creation during the <code>dbt init</code>in the previous step, and his directoy path were also shown.</p>
+<p>Let's edit this file:</p>
+<ol>
+<li>Open your Python terminal.</li>
+<li>Open your profile file, in our case it's in <code>/workspace/.dbt/profiles.yml</code>.</li>
+</ol>
+<pre><code class="language-python"># Open profile.yml with your preferred code editor such as Vim/nano/...
+$ nano /workspace/.dbt/profiles.yml
+</code></pre>
+<p>By default, your profile should look like this:</p>
+<pre><code>quick_workshop:
+  outputs:
+
+    dev:
+      type: postgres
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      user: [dev_username]
+      pass: [dev_password]
+      dbname: [dbname]
+      schema: [dev_schema]
+
+    prod:
+      type: postgres
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      user: [prod_username]
+      pass: [prod_password]
+      dbname: [dbname]
+      schema: [prod_schema]
+
+  target: dev
+</code></pre>
+<p>Replace values with your PostgreSQL cluster informations.</p>
+<p>In our case, with an OVHcloud PostgreSQL cluster:</p>
+<pre><code>quick_workshop:
+  outputs:
+
+    dev:
+      type: postgres
+      threads: 4
+      host: postgresql-5c66e728-o90e8df85.database.cloud.ovh.net
+      port: 20184
+      user: bastien
+      pass: hmTiDdN0y*********
+      dbname: defaultdb
+      schema: development
+      sslmode: require
+
+    prod:
+      type: postgres
+      threads: 4
+      host: postgresql-5c66e728-o90e8df85.database.cloud.ovh.net
+      port: 20184
+      user: bastien
+      pass: hmTiDdN0y*********                                
+      dbname: defaultdb
+      schema: production
+      sslmode: require
+
+  target: dev
+</code></pre>
+<p>Notice few things :</p>
+<ul>
+<li>You can get a development and a production environment, or even more.  Here, in the target, we ONLY interfact with dev.</li>
+<li>You can differenciate the schemas used if you want to. We did it there, with the same database clsuter BUT two schemas.</li>
+<li>SSL mode is required for OVHcloud services, but not if you are running PostgreSQL locally.</li>
+<li>1 thread means no parralelization of task. Default is 4. it mean DBT will run 4 jobs in parralel.</li>
+</ul>
+<p>A best practice is to fully separate development and production environnment.
+First to avoid human mistakes such as data deletion, but also to isolate compute resources.
+Having an splitted dev platform will allow you to run intensive queries without being scared to "disturb" production performances. </p>
+<p>Save this configuration and close this profile.yml file.</p>
+<h3 id="test-your-environment">Test your environment</h3>
+<p>First, run a debug:</p>
+<pre><code class="language-python">quick_workshop$ dbt debug
+</code></pre>
+<p><img alt="AI Notebook - Terminal button" src="img/dbtdebug.png" /></p>
+<p>If all checks have passed, we are good! DBT is able to find your configuration and able to connect to PostgreSQL.</p>
+<h3 id="perform-a-first-dummy-dbt-run">Perform a first dummy DBT run</h3>
+<p>During the project initialization, DBT pushed examples inside the <code>models</code> folder.</p>
+<p>When your perform a DBT run, DBT looks for models inside this folder and will run them.</p>
+<blockquote>
+<p>:bulb: if you go back to the pevious step, you will notice at the end of your <code>dbt_project.yml</code> configuration that we asked to build models inside /models/examples.</p>
+</blockquote>
+<p>Perform your first run:</p>
+<pre><code class="language-Python">quick_workshop$ dbt run
+(...)
+</code></pre>
+<p><img alt="DBT run" src="img/dbtrun.png" /></p>
+<p>As shown in the result, 2 models were completed successfully.</p>
+<p>These models are dummy ones. You can check what's inside by browing into <code>/models/examples</code> and open the <code>.SQL</code> files. 
+In short, the first SQL model will perform a SELECT on a fake source data, and the second DBT model will perform a SELECT on top of the first SQL model. </p>
+<p>The good thing is, DBT is able to materialize results. so you can reuse your results easily (like, hmmm, for BI reports maybe ?:wink:). It was the case for these two models. </p>
+<p>The major materialization are <code>views</code>and second ones are <code>tables</code>.
+A <code>view</code> can be seen as a virtual table. every time you ask for it, the model is rebuilt. It does not store data in your datawarehouse but will virtually aggregate information to create something to <em>view</em>.
+A <code>table</code> will create a real table in your datawarehouse. You wrote something on disks. </p>
+<p>Both have pros and cons, and the power of DBT is that you can specify this materialization directly in your models. </p>
+<p>As an example, if I select <code>table</code> here is what i can see inside my PostgreSQL cluster now:</p>
+<p><img alt="PgAdmin - view of dummy project" src="img/pgadmin1.png" /></p>
+<p>Now that we runned our first DBT run, let's build our own models!</p>
+<blockquote>
+<p>:bulb: More information and more materialization options are available with DBT: <a href="https://docs.getdbt.com/docs/build/materializations">https://docs.getdbt.com/docs/build/materializations</a>.</p>
+</blockquote>
+<h2 id="part-3-ingest-data-badly">Part 3: ingest data (badly)</h2>
+<p>Well done! You DBT project is now ready to be used. Time to play with data!</p>
+<blockquote>
+<p>:bulb: Usually you don't need to bring fake data like this, because you already have something. But hey it's a workshop :smik:. If you want to extend this workshop, I recommend to ingest data with open source tools such as <strong>Airbyte</strong> or <strong>Meltano</strong>. Both can also be self-hosted or provided as SaaS offers.</p>
+</blockquote>
+<h3 id="about-dbt-and-seeds">About DBT and seeds</h3>
+<p>DBT allows CSV data ingestion, called <code>seeds</code> (remember the <em>seeds</em> folder?).</p>
+<p>Best practive is to use <code>seeds</code> when you need to control static and versionned data.</p>
+<p>Imagine that you are running everytime the same analysis for your business, but you want to exclude a list of 20 internals account. How ? Well, by using seeds.</p>
+<p>Seeds workflow is:</p>
+<ol>
+<li>add CSV files into your <em>quick-workshop/seeds/</em> folder.</li>
+<li>run the <code>dbt seed</code> command</li>
+<li>CSV files are loaded as tables inside your datawarehouse.</li>
+<li>if you modify your CSV by adding lines, the tables will be updated during the need <code>dbt seed</code>.</li>
+</ol>
+<blockquote>
+<p>:bulb: More information and more options: <a href="https://docs.getdbt.com/docs/build/seeds">https://docs.getdbt.com/docs/build/seeds</a>. For example you can modify the <code>seeds</code>default directory, or specify a column datatype instead of betting on autoselection.</p>
+</blockquote>
+<h3 id="ingest-fake-data">Ingest fake data</h3>
+<blockquote>
+<p>:information_source: For easiness, this fake data is inspired from official dbt example called <code>jaffle_shop</code>but with extra columns for better use-cases with Metabase (more fields, and more lines). Full credits goes to this <a href="https://github.com/dbt-labs/jaffle_shop">official DBT example repository</a>.</p>
+</blockquote>
+<p>For this workshop, we will tweak the use of <code>seed</code> to import fake data.</p>
+<p><strong>Download</strong> the fake data provided in this workshop Github repository.
+It consist of 3 CSV files, wike fake data (generated with www.Mockaroo.com).</p>
+<p>From a entity relationship diagram (ERD) point of view, data is linked like this:</p>
+<p><img alt="Data ERD" src="img/fakedata.schema.png" /></p>
+<p><strong>Copy</strong> these CSV files inside the <code>quick_workshop/seeds</code> folder.</p>
+<p>Now run a <code>DBT seed</code>:</p>
+<pre><code class="language-Python">quick_workshop$ dbt seed
+14:38:29  Running with dbt=1.3.1
+14:38:29  Found 2 models, 4 tests, 0 snapshots, 0 analyses, 289 macros, 0 operations, 3 seed files, 0 sources, 0 exposures, 0 metrics
+14:38:29  
+14:38:30  Concurrency: 4 threads (target='dev')
+14:38:30  
+14:38:30  1 of 3 START seed file development.raw_customers ............................... [RUN]
+14:38:30  1 of 3 OK loaded seed file development.raw_customers ........................... [INSERT 100 in 0.31s]
+14:38:30  2 of 3 START seed file development.raw_orders .................................. [RUN]
+14:38:32  2 of 3 OK loaded seed file development.raw_orders .............................. [INSERT 1000 in 1.72s]
+14:38:32  3 of 3 START seed file development.raw_payments ................................ [RUN]
+14:38:33  3 of 3 OK loaded seed file development.raw_payments ............................ [INSERT 1000 in 1.36s]
+14:38:33  
+14:38:33  Finished running 3 seeds in 0 hours 0 minutes and 3.66 seconds (3.66s).
+14:38:33  
+14:38:33  Completed successfully
+14:38:33  
+14:38:33  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+</code></pre>
+<p>Data is now imported! Created inside 3 tables into your datawarehouse.</p>
+<p>when taking a look with a PostgreSQL client like PgAdmin, you can see three new tables :</p>
+<p><img alt="PgAdmin - new tables" src="img/pgadmin2.png" /></p>
+<p>Data is loaded, it's now time to generate analytics-ready views and tables!</p>
+<h2 id="part-4-transform-data-with-dbt-models">Part 4: transform data with DBT models</h2>
+<p>The current data is exhaustive but splitted in multiple tables.</p>
+<p>You have the users, the orders, the payments.</p>
+<p>How can you get more actionable views? for example:</p>
+<ul>
+<li>for each customer, a total amount of orders.</li>
+<li>the last order from each customer.</li>
+<li>revenues per country.</li>
+<li>...</li>
+</ul>
+<p>Without DBT, you can get those answers with classic SQL syntax, directly by querying PostgreSQL 
+It will work fine. But wait.</p>
+<p>Imagine that you don't have one query but a dozen one, nested together like pipelies (first <em>anonymize data</em>, then <em>remove fraud</em>, then <em>calculate revenues</em>, ...) not punctually but with recurrence, with vast amount of data, share your method globally and with control, with versionning, tests, generated documentation and co? </p>
+<p>That's when DBT is relevant, bringing you transformation workflows and control over SQL queries or Python code.</p>
+<h3 id="create-your-first-sql-model">Create your first SQL model</h3>
+<p>Browse your <em>quick_workshop/models/</em> directory.</p>
+<p>Delete the <code>example</code> folder, not required anymore.</p>
+<p>Create a new file named <code>customers.sql</code>. Open this file and copy the code below:</p>
+<pre><code class="language-sql">with customers as (
+
+    select
+        id as customer_id,
+        first_name,
+        last_name,
+        email,
+        country
+
+    from {{ ref('raw_customers') }}
+
+),
+
+orders as (
+
+    select
+        id as order_id,
+        customer_id,
+        order_date,
+        order_item,
+        order_status
+
+    from {{ ref('raw_orders') }}
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customers.country,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+</code></pre>
+<p><strong>Save</strong> this file.</p>
+<p>Few explanations about this code sample:
+- we start by selecting few columns for the Table "raw_customers".
+- We do the same from the table "raw_orders"
+- We then create new columns, respectively the first order date, the most recent, and the total or orders
+- we build a final query regrouping columns from multiple parts.
+- finally we select everything (*) fron this query.
+- SQL info : the coalesce() function give you the first <code>NOT NULL</code> result. so here if <code>number_of_orders</code>is null, it will replace it by zero to avoid empty cells.</p>
+<h3 id="reconfigure-your-project">Reconfigure your project</h3>
+<p>During DBT project initialization, DBT was configured to run models only from <code>/example</code> directory.</p>
+<p>Current configuration inside <code>dbt_project.yml</code>:</p>
+<pre><code>models:
+    quick_workshop:
+        examples
+            +materialized: table
+</code></pre>
+<p>Since we deleted the <em>quick_workshop/models/examples</em> directory, we have to modify this part.</p>
+<p>Modify the file <code>dbt_project.yml</code>and put this new configuration instead:</p>
+<pre><code>models:
+    quick_workshop:
+        materialized: table
+</code></pre>
+<p>It will now take into account our SQL files pushed at the <em>root</em> of <em>quick_workshop/models</em>.</p>
+<h3 id="run-dbt">Run DBT</h3>
+<p>Now let's run DBT. It will browse the <em>quick_workshop/models</em> directory:</p>
+<pre><code class="language-python">quick_workshop$ dbt run
+10:24:53  Running with dbt=1.3.1
+10:24:53  Found 1 model, 0 tests, 0 snapshots, 0 analyses, 289 macros, 0 operations, 3 seed files, 0 sources, 0 exposures, 0 metrics
+10:24:53  
+10:24:53  Concurrency: 4 threads (target='dev')
+10:24:53  
+10:24:54  1 of 2 START sql table model development.customers ............................. [RUN]
+10:24:54  1 of 2 OK created sql table model development.customers ........................ [SELECT 100 in 0.11s]
+10:24:54  
+10:24:54  Finished running 1 table model in 0 hours 0 minutes and 0.56 seconds (0.11s).
+10:24:54  
+10:24:54  Completed successfully
+10:24:54  
+10:24:54  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+</code></pre>
+<p>Model was run successfully and table also created.</p>
+<h3 id="check-the-result-in-your-datawarehouse">Check the result in your datawarehouse</h3>
+<p>What we are waiting for, is a new table created in our datawarehouse, countaining our aggregated data.</p>
+<p>Good news this is exactly what we have :wink:.</p>
+<p><img alt="PgAdmin - new tables" src="img/pgadmin3.png" /></p>
+<h3 id="exercise-1-build-another-dbt-model-wink">Exercise 1: build another DBT model :wink:</h3>
+<p>Now that we discovered a bit more how DBT works, let's try to build another model yourself.</p>
+<p>Our Marketing team would love to target more accurately some geographical areas, and want to create a country dashboard. </p>
+<p>You have to create a new <strong>table</strong> in our datawarehouse, analyzing revenues per country.
+Also, we only want to summarize revenues for orders where status is <strong>true</strong> (meaning it's paid).</p>
+<p>The table columns should be like this:</p>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Total of orders</th>
+<th>Total revenue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>France</td>
+<td>37</td>
+<td>2530</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>Create this new table and save it inside <em>quick_workshop/models/countries.sql</em>.</p>
+<blockquote>
+<p>:bulb: Hint: required data is splitted into three tables (customers, orders, payment). Time to learn about SQL JOIN :wink:.</p>
+</blockquote>
+<p>If you are blocked, you can find the solution in this Github repository, in the <em>exercises</em> folder.</p>
+<h3 id="exercise-2-remove-suspicious-accounts">Exercise 2: remove suspicious accounts</h3>
+<p>Our Data team is convinced that we need to remove all emails ending with <strong>@facebook.com</strong>, because 100% of the time it's fraudulous accounts.</p>
+<p>The goal here is to skip some irrelevant data that are ingested regularly.
+They also told us that they are investigating, but other emails system will have to be banned in the future.</p>
+<p>How do you proceed ?</p>
+<p>Same, if you are blocked, a solution can be found in this repository!</p>
+<h3 id="generate-documentation">Generate documentation</h3>
+<p>Let's get back to the topic of building a first BI Platform.</p>
+<p>What the point of having data tables without a clean documentation? None. Over time, a good documentation is key.
+Code commenting is a best practice in software development, data and queries documentation should also become an acceptence criteria for analytics engineering.</p>
+<p>What if we could generate documentation on the fly and serve it to everyone, for, by example, spread it to the data team?</p>
+<p>Good news it's included in DBT! It provide few things:
+- Ability to document your models directly in your repository (inside your models files, but also in separated documents)
+- Ability to generate a clean HTML documentation
+- Ability to serve this documentation on a web server.</p>
+<blockquote>
+<p>:bulb: More information about documentation: <a href="https://docs.getdbt.com/docs/collaborate/documentation">https://docs.getdbt.com/docs/collaborate/documentation</a></p>
+</blockquote>
+<p>Go back to your Python terminal and type:</p>
+<pre><code class="language-python">$ dbt docs generate
+(...)
+$ dbt docs serve --port 8001
+</code></pre>
+<p>Your documentation is now <strong>generated as HTML</strong>, and <strong>hosted</strong>!</p>
+<p>Generated files are pushed inside <em>quick_workshop/target</em>.</p>
+<p>If you are running DBT locally, go to <a href="http://localhost:8001">http://localhost:8001</a>.</p>
+<p>If you are using OVHcloud AI Notebook, it support port forwarding. Take the link of you notebook and add the port in the URL as shown below :</p>
+<p><strong>URL example</strong> : https://f746650a-e99c-4ab5-b7e4-5d79c32cb134.notebook.gra.ai.cloud.ovh.net/lab/tree/quick_workshop</p>
+<p><strong>Access port 8001</strong>: https://f746650a-e99c-4ab5-b7e4-5d79c32cb134-8001.notebook.gra.ai.cloud.ovh.net</p>
+<p><img alt="DBT run" src="img/schema.png" /></p>
+<h3 id="thats-a-one-small-step-for-man-but">That's a one small step for man, but...</h3>
+<p>Congrats, you now had a first model running, humbly trying to detail few DBT features.</p>
+<p>Typical DBT workflows includes more than one source of data, quite often dozens of models, creating views, tables, and all of them are nested together. With DBT test, and DBT macros, CI/CD, and Git synchronization.</p>
+<p>Again, you can see it as software develooment best practices, but ported to analytics code. No more no less!</p>
+<p>The DBT part is over for this workshop. The last part will engage data visualization!</p>
+<h2 id="part-5-visualize-your-data-with-metabase">Part 5 : Visualize your data with Metabase</h2>
+<h3 id="why-metabase-is-so-cool">Why Metabase is so cool ?</h3>
+<p>Similarly to DBT, <a href="https://www.metabase.com">Metabase</a> is an open source software provided as a paid cloud version or free self-hosted.</p>
+<p>Metabase is awesome in multiple ways. It can be defined as a BI tools, with two main part :
+- A query tool, with wysiwyg editor and SQL query support.
+- A dashboard tool, with a well polished and intuitive interface.</p>
+<p>Metabase <strong>does not store your data</strong>, but they will store your queries syntax and metadata required to build your dashboards. I guess that the name <em>meta(data)base</em> comes from this point :wink:.
+By default, for the self-hosted version, they store this data inside a SQLite database but you can opt for your own SQL database as a backend (much better for production). </p>
+<h3 id="install-metabase">Install Metabase</h3>
+<p>For this tutorial, we will use the self hosted version.</p>
+<p>Metabase can be installed from multiples ways, as explained in their official documentation: java JAR file, Docker image, or from source.  </p>
+<h4 id="option-1-install-metabase-with-desktop-jar-version">Option 1: install metabase with desktop JAR version</h4>
+<p>Metabase is proposed a a java file (JAR). If you computer has a Java Runtime &gt;=8 (JRE), such as MAcOS or most Linux distributions, it's the easiest way to try it.</p>
+<p>Express guide : </p>
+<ol>
+<li>download Metabase from https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase</li>
+<li>push it in a folder called for example "metabase". because it will generate files</li>
+<li>run it by double-click or type "java -jar metabase.jar" in a terminal to get logs (it it doesn't work).</li>
+</ol>
+<h4 id="option-2-install-metabase-via-docker-in-the-cloud">Option 2: Install metabase via Docker in the cloud</h4>
+<p>If you are more into Docker or Source installation, follow their official tutorials
+https://www.metabase.com/docs/latest/</p>
+<p>This is the option selected for this workshop on my side, by doing this:</p>
+<ol>
+<li>I'm not admin on my professional laptop, so I launched an OVHcloud virtual marchine (instance).</li>
+<li>Go in OVHcloud Control panel / Public Cloud / Instance / new</li>
+<li>create a new instance, model Sandbox S1-2 (the cheapest) with latest Ubuntu (22.10 at the time) and public network (you need a SSH key)</li>
+<li>Once Created, follow official Metabase instructions from their website documentation</li>
+</ol>
+<p>If you followed official instrutions, shortly after installation you can connect to your metabase instance via <http://\<your_ip>:3001> and be reidrected to the welcome screen.</p>
+<h3 id="connect-your-datawarehouse-to-metabase">Connect your datawarehouse to metabase</h3>
+<p>Metabase comes with a large choice of official data sources connectors, but also partners and community-based ones.
+MySQL, PostgreSQL, MongoDB, BigQuery, Snowflake, Apache Spark, Google Analytics, ... but also Hydra, DuckDB.</p>
+<blockquote>
+<p>:information_source: List of official connectors: <a href="https://www.metabase.com/data_sources/">https://www.metabase.com/data_sources/</a>.</p>
+</blockquote>
+<p>Once installed, click on <code>Get started</code>, fill the information and add a PostgreSQL source.</p>
+<p>For an OVHcloud for PostgreSQL database, fill is at below (be carefull, SSL is in <code>require</code> mode):</p>
+<p><img alt="Metabase - add PostgreSQL 1" src="img/metabase1.png" />
+<img alt="Metabase - add PostgreSQL 2" src="img/metabase2.png" /></p>
+<p>If your connector is correctly configured, you should be able to browser you data through the left menu.</p>
+<p>Metabase provides a sample database, and one that we called <code>Workshop</code>.</p>
+<p><img alt="Metabase - browse data" src="img/metabase3.png" /></p>
+<p>If you browse this data, you will eventually see all the table generated via DBT.
+The ones with raw data, and the ones generated (<code>customers</code> and <code>countries</code>).</p>
+<p>Metabase built a handy feature called X-ray (the lightning strike), generating automatically some reports about a specific table.
+Try it with your customers table for example :</p>
+<p><img alt="Metabase - xray" src="img/metabase4.png" /></p>
+<h3 id="build-awesome-dashboards">Build awesome dashboards</h3>
+<p>When you query you data, Metabase allows you to save your query and his visualisation. 
+A Dashboard is composed to saved visualisation and filtering options. 
+You can see a dashboard as virtual collection of previously-made visualizations. </p>
+<p>So, you start by querying the data, then save the results and finally add them into dashboards.</p>
+<h3 id="query-your-data">Query your data</h3>
+<p>On the top right menu, click on the <code>+ NEW</code>button and select <code>Question</code>.</p>
+<p>Pick the <em>/Workshop/customers/</em> data table. it will open a visual interface allowing you to filter, sort, limit your queries, as classic SQL queries. You also have advanced feature like SQL join, ...</p>
+<p>This interface is pretty straightforward, play a bit with the tool.
+As an example, do a <code>Count of rows</code> by <code>country</code>, then click on the small <code>Preview</code>button on the right.</p>
+<p><img alt="Metabase - query editor" src="img/metabase6.png" /></p>
+<blockquote>
+<p>:bulb: on the <code>+ NEW</code> button, you can also create a new <strong>SQL query via code editor</strong>. You can also create <strong>Metabase models</strong>, like in DBT. you have the ability to synchronize your DBT models and documentation with Metabase via extra python package such as <a href="https://github.com/gouline/dbt-metabase">dbt-metabase</a>.</p>
+</blockquote>
+<h3 id="add-a-visualization-to-the-dashboard">Add a visualization to the dashboard</h3>
+<p>Once your query fits your need, click on <code>Visualize</code>. on the left menu, you can modify visualization type and few settings.</p>
+<p>Example:
+<img alt="Metabase - visualization example" src="img/metabase7.png" /></p>
+<p><strong>Save</strong> your question when you're satisfied ! Metabase will automatically suggest to add this question to a dashboard.</p>
+<h4 id="exercise-3-build-your-first-dashboard">Exercise 3: build your first dashboard</h4>
+<p>Our sales team discovered your BI platform project. They would love a first dashboard with 4 informations. we don't judge their relevancy here :wink: :
+- Total of customers we have.
+- Table with top 5 customers information.
+- Bar chart with orders repartition per customers.
+- Cascade chart with revenues and orders per country.
+- all of that with a dashboard filter, per country</p>
+<p>At the end it should look a bit like this:</p>
+<p><img alt="Metabase - visualization example" src="img/metabase8.png" /></p>
+<blockquote>
+<p>:bulb: If you have some issues with this exercise, you'll find queries details in this repository, as always!</p>
+</blockquote>
+<h2 id="done-you-just-built-a-first-bi-platform">Done! You just built a first BI platform</h2>
+<p>High five! Thank you for following this workshop.</p>
+<p>Initial goal was to discover awesome and open source data tools, how they work, and with a common use-case. 
+I do hope that this mission is completed!</p>
+<p>Do hesitate to improve this repository directly (pull request), open an issue, or share your thoughts directly.</p>
+<p>Feel free to contribute and give me your feedbacks via <a href="http://twitter.com/bastienovh/">http://twitter.com/bastienovh/</a> .</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li>Curated list of DBT resources: <a href="https://github.com/Hiflylabs/awesome-dbt/">https://github.com/Hiflylabs/awesome-dbt/</a></li>
+<li>Official DBT workshop: <a href="https://github.com/dbt-labs/jaffle_shop/">https://github.com/dbt-labs/jaffle_shop/</a></li>
+<li>Official Metabase learn lessons: <a href="https://www.metabase.com/learn/ ">https://www.metabase.com/learn/ </a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.4.2
+Build Date UTC : 2023-01-09 20:03:46.048980+00:00
+-->
