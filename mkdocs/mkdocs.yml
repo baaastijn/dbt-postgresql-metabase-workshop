@@ -14,9 +14,7 @@ repo_name: baaastijn/dbt-postgresql-metabase-workshop
 
 markdown_extensions:
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.emoji
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
