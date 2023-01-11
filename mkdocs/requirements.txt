@@ -3,3 +3,4 @@ MarkupSafe
 mkdocs
 text-unidecode
 mkdocs-material
+mkdocs-material-extensions
