@@ -1,0 +1,735 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../part3ingest/">
+      
+      
+        <link rel="next" href="../part5metabase/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
+    
+    
+      
+        <title>Part 4 - Transform data with DBT - Workshop DBT + PostgreSQL + Metabase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6b71719e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#create-your-first-sql-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Workshop DBT + PostgreSQL + Metabase" class="md-header__button md-logo" aria-label="Workshop DBT + PostgreSQL + Metabase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Workshop DBT + PostgreSQL + Metabase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part 4 - Transform data with DBT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/baaastijn/dbt-postgresql-metabase-workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    baaastijn/dbt-postgresql-metabase-workshop
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Workshop DBT + PostgreSQL + Metabase" class="md-nav__button md-logo" aria-label="Workshop DBT + PostgreSQL + Metabase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Workshop DBT + PostgreSQL + Metabase
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/baaastijn/dbt-postgresql-metabase-workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    baaastijn/dbt-postgresql-metabase-workshop
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part1setup/" class="md-nav__link">
+        Part 1 -  Setup your environment
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part2dbt/" class="md-nav__link">
+        Part 2 - Install DBT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part3ingest/" class="md-nav__link">
+        Part 3 - Ingest data (badly)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Part 4 - Transform data with DBT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Part 4 - Transform data with DBT
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-first-sql-model" class="md-nav__link">
+    Create your first SQL model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconfigure-your-project" class="md-nav__link">
+    Reconfigure your project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-dbt" class="md-nav__link">
+    Run DBT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-the-result-in-your-datawarehouse" class="md-nav__link">
+    Check the result in your datawarehouse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1-build-another-dbt-model" class="md-nav__link">
+    Exercise 1: build another DBT model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-2-remove-suspicious-accounts" class="md-nav__link">
+    Exercise 2: remove suspicious accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-documentation" class="md-nav__link">
+    Generate documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thats-a-one-small-step-for-man-but" class="md-nav__link">
+    That's a one small step for man, but...
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part5metabase/" class="md-nav__link">
+        Part 5 - Visualize with Metabase
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part6conclusion/" class="md-nav__link">
+        Conclusion
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-first-sql-model" class="md-nav__link">
+    Create your first SQL model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconfigure-your-project" class="md-nav__link">
+    Reconfigure your project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-dbt" class="md-nav__link">
+    Run DBT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-the-result-in-your-datawarehouse" class="md-nav__link">
+    Check the result in your datawarehouse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1-build-another-dbt-model" class="md-nav__link">
+    Exercise 1: build another DBT model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-2-remove-suspicious-accounts" class="md-nav__link">
+    Exercise 2: remove suspicious accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-documentation" class="md-nav__link">
+    Generate documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thats-a-one-small-step-for-man-but" class="md-nav__link">
+    That's a one small step for man, but...
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+  <h1>Part 4 - Transform data with DBT</h1>
+
+<p>The current data is exhaustive but splitted in multiple tables.</p>
+<p>You have the users, the orders, the payments:</p>
+<p><img alt="Data ERD" src="../img/fakedata.schema.png" /></p>
+<p>How can you get more actionable views? For example:</p>
+<ul>
+<li>For each customer, a total amount of orders.</li>
+<li>The last order from each customer.</li>
+<li>Revenues per country.</li>
+<li>...</li>
+</ul>
+<p>Without DBT, you can get those answers with classic SQL syntax, directly by querying PostgreSQL 
+It will work fine. But wait.</p>
+<p>Imagine that you don't have one query but one of a dozen, nested together like pipelies (first <em>anonymize data</em>, then <em>remove fraud</em>, then <em>calculate revenues</em>, ...) not run punctually but with recurrence, with vast amount of data, a critical production. Also imagine that you want to share your queries globally and with control, with versionning, tests, generated documentation and co? </p>
+<p>That's when DBT is relevant, bringing your transformation workflows and control over SQL queries or Python code.</p>
+<h2 id="create-your-first-sql-model">Create your first SQL model</h2>
+<p>Browse your <code>quick_workshop/models/</code> directory.</p>
+<p>Delete the <code>example</code> folder, not required anymore.</p>
+<p>Create a new file named <code>customers.sql</code>. Open this file and copy the code below:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">select</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="n">id</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">customer_id</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="n">first_name</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="n">last_name</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="n">email</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">country</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="k">ref</span><span class="p">(</span><span class="s1">&#39;raw_customers&#39;</span><span class="p">)</span><span class="w"> </span><span class="err">}}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">),</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">orders</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="k">select</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="n">id</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">order_id</span><span class="p">,</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="n">customer_id</span><span class="p">,</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="n">order_date</span><span class="p">,</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="n">order_item</span><span class="p">,</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="n">order_status</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="k">ref</span><span class="p">(</span><span class="s1">&#39;raw_orders&#39;</span><span class="p">)</span><span class="w"> </span><span class="err">}}</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">),</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">customer_orders</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="k">select</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="n">customer_id</span><span class="p">,</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="k">min</span><span class="p">(</span><span class="n">order_date</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">first_order_date</span><span class="p">,</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="k">max</span><span class="p">(</span><span class="n">order_date</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">most_recent_order_date</span><span class="p">,</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">        </span><span class="k">count</span><span class="p">(</span><span class="n">order_id</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">number_of_orders</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">orders</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="p">),</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="k">final</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">    </span><span class="k">select</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">        </span><span class="n">customers</span><span class="p">.</span><span class="n">customer_id</span><span class="p">,</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">        </span><span class="n">customers</span><span class="p">.</span><span class="n">first_name</span><span class="p">,</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">        </span><span class="n">customers</span><span class="p">.</span><span class="n">last_name</span><span class="p">,</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">        </span><span class="n">customers</span><span class="p">.</span><span class="n">country</span><span class="p">,</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">        </span><span class="n">customer_orders</span><span class="p">.</span><span class="n">first_order_date</span><span class="p">,</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">        </span><span class="n">customer_orders</span><span class="p">.</span><span class="n">most_recent_order_date</span><span class="p">,</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">        </span><span class="k">coalesce</span><span class="p">(</span><span class="n">customer_orders</span><span class="p">.</span><span class="n">number_of_orders</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">number_of_orders</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">    </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">customer_orders</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">customer_id</span><span class="p">)</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="p">)</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="k">final</span>
+</code></pre></div>
+<p><strong>Save</strong> this file.</p>
+<p>Few explanations about this code sample:</p>
+<ul>
+<li>We start by selecting few columns for the Table <code>raw_customers</code>.</li>
+<li>We do the same from the table <code>raw_orders</code>.</li>
+<li>We then create new columns, respectively the first order date, the most recent, and the total or orders.</li>
+<li>we build a final query regrouping columns from multiple parts.</li>
+<li>finally we select everything (*) from this query.</li>
+<li>SQL info: the coalesce() function give you the first <code>NOT NULL</code> result. Here if <code>number_of_orders</code>is null, it will replace it by zero to avoid empty cells.</li>
+</ul>
+<h2 id="reconfigure-your-project">Reconfigure your project</h2>
+<p>During DBT project initialization, DBT was configured to run models only from <code>/examples</code> directory.</p>
+<p>Current configuration inside <code>dbt_project.yml</code> is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>models:
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    quick_workshop:
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        examples
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            +materialized: table
+</code></pre></div>
+<p>Since we deleted the <code>quick_workshop/models/examples</code> directory, we have to modify this part.</p>
+<p>Modify the file <code>dbt_project.yml</code>and put this new configuration instead:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>models:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    quick_workshop:
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        materialized: table
+</code></pre></div>
+<p>It will now take into account our SQL files pushed at the <em>root</em> of <code>quick_workshop/models</code>.</p>
+<h2 id="run-dbt">Run DBT</h2>
+<p>Now let's run DBT. It will browse the <em>quick_workshop/models</em> directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">quick_workshop</span><span class="err">$</span> <span class="n">dbt</span> <span class="n">run</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">53</span>  <span class="n">Running</span> <span class="k">with</span> <span class="n">dbt</span><span class="o">=</span><span class="mf">1.3.1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">53</span>  <span class="n">Found</span> <span class="mi">1</span> <span class="n">model</span><span class="p">,</span> <span class="mi">0</span> <span class="n">tests</span><span class="p">,</span> <span class="mi">0</span> <span class="n">snapshots</span><span class="p">,</span> <span class="mi">0</span> <span class="n">analyses</span><span class="p">,</span> <span class="mi">289</span> <span class="n">macros</span><span class="p">,</span> <span class="mi">0</span> <span class="n">operations</span><span class="p">,</span> <span class="mi">3</span> <span class="n">seed</span> <span class="n">files</span><span class="p">,</span> <span class="mi">0</span> <span class="n">sources</span><span class="p">,</span> <span class="mi">0</span> <span class="n">exposures</span><span class="p">,</span> <span class="mi">0</span> <span class="n">metrics</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">53</span>  
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">53</span>  <span class="n">Concurrency</span><span class="p">:</span> <span class="mi">4</span> <span class="n">threads</span> <span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="s1">&#39;dev&#39;</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">53</span>  
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">54</span>  <span class="mi">1</span> <span class="n">of</span> <span class="mi">2</span> <span class="n">START</span> <span class="n">sql</span> <span class="n">table</span> <span class="n">model</span> <span class="n">development</span><span class="o">.</span><span class="n">customers</span> <span class="o">.............................</span> <span class="p">[</span><span class="n">RUN</span><span class="p">]</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">54</span>  <span class="mi">1</span> <span class="n">of</span> <span class="mi">2</span> <span class="n">OK</span> <span class="n">created</span> <span class="n">sql</span> <span class="n">table</span> <span class="n">model</span> <span class="n">development</span><span class="o">.</span><span class="n">customers</span> <span class="o">........................</span> <span class="p">[</span><span class="n">SELECT</span> <span class="mi">100</span> <span class="ow">in</span> <span class="mf">0.11</span><span class="n">s</span><span class="p">]</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">54</span>  
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">54</span>  <span class="n">Finished</span> <span class="n">running</span> <span class="mi">1</span> <span class="n">table</span> <span class="n">model</span> <span class="ow">in</span> <span class="mi">0</span> <span class="n">hours</span> <span class="mi">0</span> <span class="n">minutes</span> <span class="ow">and</span> <span class="mf">0.56</span> <span class="n">seconds</span> <span class="p">(</span><span class="mf">0.11</span><span class="n">s</span><span class="p">)</span><span class="o">.</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">54</span>  
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">54</span>  <span class="n">Completed</span> <span class="n">successfully</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">54</span>  
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="mi">10</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">54</span>  <span class="n">Done</span><span class="o">.</span> <span class="n">PASS</span><span class="o">=</span><span class="mi">1</span> <span class="n">WARN</span><span class="o">=</span><span class="mi">0</span> <span class="n">ERROR</span><span class="o">=</span><span class="mi">0</span> <span class="n">SKIP</span><span class="o">=</span><span class="mi">0</span> <span class="n">TOTAL</span><span class="o">=</span><span class="mi">1</span>
+</code></pre></div>
+<p>Model was run successfully and table also created.</p>
+<h2 id="check-the-result-in-your-datawarehouse">Check the result in your datawarehouse</h2>
+<p>What we are waiting for, is a new table created in our datawarehouse, countaining our aggregated data.</p>
+<p>Good news this is exactly what we have <img alt="😉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f609.svg" title=":wink:" />.</p>
+<p><img alt="PgAdmin - new tables" src="../img/pgadmin3.png" /></p>
+<h2 id="exercise-1-build-another-dbt-model">Exercise 1: build another DBT model <img alt="😉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f609.svg" title=":wink:" /></h2>
+<p>Now that we discovered a bit more how DBT works, let's try to build another model yourself.</p>
+<p>Our Marketing team would love to target more accurately some geographical areas, and want to create a country dashboard. </p>
+<p>You have to create a new <strong>table</strong> in our datawarehouse, analyzing revenues per country.
+Also, we only want to summarize revenues for orders where status is <strong>true</strong> (meaning it's paid).</p>
+<p>The table columns should be like this:</p>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Total of orders</th>
+<th>Total revenue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>France</td>
+<td>37</td>
+<td>2530</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>Create this new table and save it inside <em>quick_workshop/models/countries.sql</em>.</p>
+<blockquote>
+<p><img alt="💡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a1.svg" title=":bulb:" /> Hint: required data is splitted into three tables (customers, orders, payment). Time to learn about SQL JOIN <img alt="😉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f609.svg" title=":wink:" />.</p>
+</blockquote>
+<p>If you are blocked, you can find the solution in this Github repository, in the <em>exercises</em> folder.</p>
+<h2 id="exercise-2-remove-suspicious-accounts">Exercise 2: remove suspicious accounts</h2>
+<p>Our Data team is convinced that we need to remove all emails ending with <strong>@facebook.com</strong>, because 100% of the time it's fraudulous accounts.</p>
+<p>The goal here is to skip some irrelevant data that are ingested regularly.
+They also told us that they are investigating, but other emails system will have to be banned in the future.</p>
+<p>How do you proceed ?</p>
+<p>Same, if you are blocked, a solution can be found in this Github repository!</p>
+<h2 id="generate-documentation">Generate documentation</h2>
+<p>Let's get back to the topic of building a first BI Platform.</p>
+<p>What the point of having data tables without a clean documentation? None. Over time, a good documentation is key.
+Code commenting is a best practice in software development, data and queries documentation should also become an acceptence criteria for analytics engineering.</p>
+<p>What if we could generate documentation on the fly and serve it to everyone, for, by example, spread it to the data team?</p>
+<p>Good news it's included in DBT! It provide few things:
+- Ability to document your models directly in your repository (inside your models files, but also in separated documents)
+- Ability to generate a clean HTML documentation
+- Ability to serve this documentation on a web server.</p>
+<blockquote>
+<p><img alt="💡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a1.svg" title=":bulb:" /> Inception: More documentation about documentation: <a href="https://docs.getdbt.com/docs/collaborate/documentation">https://docs.getdbt.com/docs/collaborate/documentation</a></p>
+</blockquote>
+<p>Go back to your Python terminal and type:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="err">$</span> <span class="n">dbt</span> <span class="n">docs</span> <span class="n">generate</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="err">$</span> <span class="n">dbt</span> <span class="n">docs</span> <span class="n">serve</span> <span class="o">--</span><span class="n">port</span> <span class="mi">8001</span>
+</code></pre></div>
+<p>Your documentation is now <strong>generated as HTML</strong>, and <strong>hosted</strong>!</p>
+<p>Generated files are pushed inside <em>quick_workshop/target</em>.</p>
+<p>If you are running DBT locally, go to <a href="http://localhost:8001">http://localhost:8001</a>.</p>
+<p>If you are using OVHcloud AI Notebook, it support port forwarding. Take the link of you notebook and add the port in the URL as shown below :</p>
+<p><strong>URL example</strong> : https://f746650a-e99c-4ab5-b7e4-5d79c32cb134.notebook.gra.ai.cloud.ovh.net/lab/tree/quick_workshop</p>
+<p><strong>Access port 8001</strong>: https://f746650a-e99c-4ab5-b7e4-5d79c32cb134-8001.notebook.gra.ai.cloud.ovh.net</p>
+<p><img alt="DBT run" src="../img/schema.png" /></p>
+<h2 id="thats-a-one-small-step-for-man-but">That's a one small step for man, but...</h2>
+<p>Congrats, you now had a first model running, and hopefully a good understanding about few DBT features.</p>
+<p><strong>Lot of shortcuts were made here.</strong></p>
+<p>Typical DBT workflows includes more than one source of data, quite often dozens of models, creating views, tables, and all of them are nested together. With DBT test, and DBT macros, CI/CD, and Git synchronization.</p>
+<p>Did i forgot to mention it? <strong>Use Git</strong> for your files <img alt="😉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f609.svg" title=":wink:" />. </p>
+<p>Again, you can see it as software development best practices, but ported to analytics code. No more no less!</p>
+<p>The DBT part is over for this workshop. <a href="../part5metabase/">The last part will engage data visualization</a>!</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>

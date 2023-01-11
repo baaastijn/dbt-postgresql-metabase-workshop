@@ -9,22 +9,22 @@
       
       
       
+        <link rel="prev" href="../part5metabase/">
       
-        <link rel="next" href="part1setup/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
     
     
       
-        <title>Workshop DBT + PostgreSQL + Metabase</title>
+        <title>Conclusion - Workshop DBT + PostgreSQL + Metabase</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.6b71719e.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6b71719e.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -40,7 +40,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dbt-postgresql-metabase-a-first-analytics-platform" class="md-skip">
+        <a href="#done-you-just-built-a-first-bi-platform" class="md-skip">
           Skip to content
         </a>
       
@@ -79,7 +79,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Workshop DBT + PostgreSQL + Metabase" class="md-header__button md-logo" aria-label="Workshop DBT + PostgreSQL + Metabase" data-md-component="logo">
+    <a href=".." title="Workshop DBT + PostgreSQL + Metabase" class="md-header__button md-logo" aria-label="Workshop DBT + PostgreSQL + Metabase" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Conclusion
             
           </span>
         </div>
@@ -177,7 +177,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Workshop DBT + PostgreSQL + Metabase" class="md-nav__button md-logo" aria-label="Workshop DBT + PostgreSQL + Metabase" data-md-component="logo">
+    <a href=".." title="Workshop DBT + PostgreSQL + Metabase" class="md-nav__button md-logo" aria-label="Workshop DBT + PostgreSQL + Metabase" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -206,86 +206,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         Home
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hello-what-are-we-going-to-do-tonight-brain" class="md-nav__link">
-    Hello!  What are we going to do tonight, Brain?
-  </a>
-  
-    <nav class="md-nav" aria-label="Hello!  What are we going to do tonight, Brain?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#discovering-awesome-open-source-data-tools" class="md-nav__link">
-    Discovering awesome open source data tools
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-an-analytics-platform" class="md-nav__link">
-    Building an analytics platform
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-we-are-not-building-today" class="md-nav__link">
-    What we are not building today
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#time-and-cost" class="md-nav__link">
-    Time and cost
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -298,7 +223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="part1setup/" class="md-nav__link">
+      <a href="../part1setup/" class="md-nav__link">
         Part 1 -  Setup your environment
       </a>
     </li>
@@ -313,7 +238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="part2dbt/" class="md-nav__link">
+      <a href="../part2dbt/" class="md-nav__link">
         Part 2 - Install DBT
       </a>
     </li>
@@ -328,7 +253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="part3ingest/" class="md-nav__link">
+      <a href="../part3ingest/" class="md-nav__link">
         Part 3 - Ingest data (badly)
       </a>
     </li>
@@ -343,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="part4transform/" class="md-nav__link">
+      <a href="../part4transform/" class="md-nav__link">
         Part 4 - Transform data with DBT
       </a>
     </li>
@@ -358,7 +283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="part5metabase/" class="md-nav__link">
+      <a href="../part5metabase/" class="md-nav__link">
         Part 5 - Visualize with Metabase
       </a>
     </li>
@@ -371,11 +296,55 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="part6conclusion/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Conclusion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Conclusion
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#done-you-just-built-a-first-bi-platform" class="md-nav__link">
+    Done! You just built a first BI platform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -397,8 +366,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -407,43 +374,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hello-what-are-we-going-to-do-tonight-brain" class="md-nav__link">
-    Hello!  What are we going to do tonight, Brain?
-  </a>
-  
-    <nav class="md-nav" aria-label="Hello!  What are we going to do tonight, Brain?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#discovering-awesome-open-source-data-tools" class="md-nav__link">
-    Discovering awesome open source data tools
+  <a href="#done-you-just-built-a-first-bi-platform" class="md-nav__link">
+    Done! You just built a first BI platform
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#building-an-analytics-platform" class="md-nav__link">
-    Building an analytics platform
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional resources
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-we-are-not-building-today" class="md-nav__link">
-    What we are not building today
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#time-and-cost" class="md-nav__link">
-    Time and cost
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -466,40 +406,21 @@
 
 
 
-<h1 id="dbt-postgresql-metabase-a-first-analytics-platform">DBT + PostgreSQL + Metabase = a first analytics platform</h1>
-<p><img alt="Twitter URL" src="https://img.shields.io/twitter/url?label=Author&amp;style=social&amp;url=https%3A%2F%2Ftwitter.com%2FBastienOvh" /></p>
-<p>Step by step workshop to build a basic modern analytics platform with DBT, PostgreSQL and Metabase.
-Only open source tools, and can be hosted locally on your computer or in the cloud!</p>
-<p>I will assume this is the first time that you will use DBT and Metabase.</p>
-<p><a href="https://github.com/baaastijn/dbt-postgresql-metabase-workshop">Linked Github Repository, with fake data and exercise solutions</a>.</p>
-<h2 id="hello-what-are-we-going-to-do-tonight-brain">Hello! <img alt="🐭" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f42d.svg" title=":mouse:" /> <em>What are we going to do tonight, Brain?</em></h2>
-<h3 id="discovering-awesome-open-source-data-tools">Discovering awesome open source data tools</h3>
-<p>Initial goal is to have fun discovering some of most notorious modern data tools, with a typical use-case: analyze your orders and customers.</p>
-<p>The BI platform pipeline that we will create is similar to this schema, whith dashboards as outputs: </p>
-<p><img alt="first BI platform" src="img/dbt-postgresql-metabase.png" /></p>
-<p>Over the years, DBT has trusted the charts as the "transformation workflow" tool, same for Metabase as open source business intelligence tool, along with Apache Superset. They work pretty well together, and are seen in many production architectures.</p>
-<p>The last piece of data software that we will discover is PostgreSQL, who will act as a datawarehouse.
-While Clickhouse, Google BigQuery or Snowflake might have been excellent choices for an analytical production platform, I selected PostgreSQL because it can be installed locally with zero expenses, and is a perfect fit for our light and standard needs.</p>
-<h3 id="building-an-analytics-platform">Building an analytics platform</h3>
-<p>Over this workshop, you will get a first introduction to DBT and Metabase features.</p>
-<p>Our use case is quite simple: we are a company, with customers, orders and payments.
-We want to build nice visualization dashboards, to monitor closely our activity.</p>
-<p>More than dashboards, we want to avoid black magic, avoid technical debt, and for that we will use DBT to introduce best practive for analytics.</p>
-<p>What this workshop is not : it's not an intensive worshop for experts, neither something to follow for best practices (it's more the opposite since we will skip few phases like Git synchonization, DBT, tests).</p>
-<h3 id="what-we-are-not-building-today">What we are not building today</h3>
-<p>This is not a workshop to craft a modern data platform ready for production.
-This is not an installation guide, best-practices neither an extensive documentation.</p>
-<h3 id="time-and-cost">Time and cost</h3>
-<p><strong>Expected time for this workshop</strong> : it depends of your skills. If you are new to the cloud, let's say 4-5 hours.
-If your have cloud/tech experience, +-2 hours.</p>
-<p><strong>Cost</strong> : <strong>free</strong> if you run everything locally. </p>
-<p>In the cloud, more or less 3 euros for 24h in OVHcloud:</p>
+  <h1>Conclusion</h1>
+
+<h2 id="done-you-just-built-a-first-bi-platform">Done! You just built a first BI platform</h2>
+<p>High five! Thank you for following this workshop.</p>
+<p>Initial goal was to discover awesome and open source data tools, how they work, and with a common use-case. 
+I do hope that this mission is completed!</p>
+<p>Do hesitate to improve this repository directly (pull request), open an issue, or share your thoughts directly.</p>
+<p>Feel free to contribute (see the Github link on the top bar ?) and give me your feedback via <a href="http://twitter.com/bastienovh/">http://twitter.com/bastienovh/</a> .</p>
+<p>And don't forget to tell your mom about what you did today... <img alt="😏" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f60f.svg" title=":smirk:" /></p>
+<h2 id="additional-resources">Additional resources</h2>
 <ul>
-<li>AI Notebook (DBT host): 24h x 0,03 € = 0,72€</li>
-<li>PostgreSQL managed database: 24h x 0,07€ = 1,68€</li>
-<li>VM instance (metabase host): 24h x 0,0088€ = 0,021€</li>
+<li>Curated list of DBT resources: <a href="https://github.com/Hiflylabs/awesome-dbt/">https://github.com/Hiflylabs/awesome-dbt/</a></li>
+<li>Official DBT workshop, who inspired this one: <a href="https://github.com/dbt-labs/jaffle_shop/">https://github.com/dbt-labs/jaffle_shop/</a></li>
+<li>Official Metabase learn lessons for much better dashboard: <a href="https://www.metabase.com/learn/">https://www.metabase.com/learn/</a></li>
 </ul>
-<p>Ready? See you in few hours! Start by <a href="part1setup/">setting up your environment</a></p>
 
 
 
@@ -537,10 +458,10 @@ If your have cloud/tech experience, +-2 hours.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
     
   </body>

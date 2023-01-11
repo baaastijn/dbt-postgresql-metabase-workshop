@@ -1,0 +1,749 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../part1setup/">
+      
+      
+        <link rel="next" href="../part3ingest/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
+    
+    
+      
+        <title>Part 2 - Install DBT - Workshop DBT + PostgreSQL + Metabase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6b71719e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-the-hell-is-dbt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Workshop DBT + PostgreSQL + Metabase" class="md-header__button md-logo" aria-label="Workshop DBT + PostgreSQL + Metabase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Workshop DBT + PostgreSQL + Metabase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part 2 - Install DBT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/baaastijn/dbt-postgresql-metabase-workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    baaastijn/dbt-postgresql-metabase-workshop
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Workshop DBT + PostgreSQL + Metabase" class="md-nav__button md-logo" aria-label="Workshop DBT + PostgreSQL + Metabase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Workshop DBT + PostgreSQL + Metabase
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/baaastijn/dbt-postgresql-metabase-workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    baaastijn/dbt-postgresql-metabase-workshop
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part1setup/" class="md-nav__link">
+        Part 1 -  Setup your environment
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Part 2 - Install DBT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Part 2 - Install DBT
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-hell-is-dbt" class="md-nav__link">
+    What the hell is DBT?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-dbt" class="md-nav__link">
+    Install DBT
+  </a>
+  
+    <nav class="md-nav" aria-label="Install DBT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-first-project" class="md-nav__link">
+    Create your first project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-dbt-to-your-postgresql-server" class="md-nav__link">
+    Connect DBT to your PostgreSQL server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-your-environment" class="md-nav__link">
+    Test your environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-a-first-dummy-dbt-run" class="md-nav__link">
+    Perform a first dummy DBT run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dbt-is-correctly-initialized" class="md-nav__link">
+    DBT is correctly initialized!
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part3ingest/" class="md-nav__link">
+        Part 3 - Ingest data (badly)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part4transform/" class="md-nav__link">
+        Part 4 - Transform data with DBT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part5metabase/" class="md-nav__link">
+        Part 5 - Visualize with Metabase
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part6conclusion/" class="md-nav__link">
+        Conclusion
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-hell-is-dbt" class="md-nav__link">
+    What the hell is DBT?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-dbt" class="md-nav__link">
+    Install DBT
+  </a>
+  
+    <nav class="md-nav" aria-label="Install DBT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-first-project" class="md-nav__link">
+    Create your first project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-dbt-to-your-postgresql-server" class="md-nav__link">
+    Connect DBT to your PostgreSQL server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-your-environment" class="md-nav__link">
+    Test your environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-a-first-dummy-dbt-run" class="md-nav__link">
+    Perform a first dummy DBT run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dbt-is-correctly-initialized" class="md-nav__link">
+    DBT is correctly initialized!
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+  <h1>Part 2 - Install DBT</h1>
+
+<p>Great! On the previous part, we setup a Python environment and a datawarehouse via PostgreSQL.
+It's now time to install the first data software, DBT!</p>
+<h2 id="what-the-hell-is-dbt"><img alt="🐵" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f435.svg" title=":monkey_face:" /> What the hell is DBT?</h2>
+<p>Good question! I still don't know <em>exactly</em> after few hours. DBT is the acronym of Data Build Tool and was created in 2016 by some folks of RJMetrics.</p>
+<p>Here is quote from their official website: <em>dbt is a transformation workflow that helps you get more work done while producing higher quality results. You can use dbt to modularize and centralize your analytics code, while also providing your data team with guardrails typically found in software engineering workflows. Collaborate on data models, version them, and test and document your queries before safely deploying them to production, with monitoring and visibility</em>.</p>
+<p>DBT is an answer to all team facing analytics issues. <em>Who made a change on this query?. Where can I find explanation about this data? How can i rollback to the queries made 1 week ago? How can I test safely before running is in production?</em>. You see what I mean. Artisanal mode.</p>
+<p>If I try to sum-up, with data analytics your start with multiple data sources and end up with results, like reports or dashboards. Between sources and results, the workflows you put has to be structured, tested, documented, collaborative, and shared safely.</p>
+<p>We already do that widely for software. A devops culture. If you develop a software, you will push you code on Git, collaborate with branches, do some versioning, document you code directly, build CI/CD pipelines, ... </p>
+<p>Why not doing the same with data analytics ? Software engineering is here since long, now let's embrace analytics engineering! </p>
+<p>DBT is one of the answer :) Don't hesitate to read more with the <a href="https://docs.getdbt.com/community/resources/viewpoint">DBT viewpoint</a>.</p>
+<h2 id="install-dbt">Install DBT</h2>
+<blockquote>
+<p><img alt="💡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a1.svg" title=":bulb:" /> Check official documentation for complete guidance: <a href="https://docs.getdbt.com/docs/get-started/installation">https://docs.getdbt.com/docs/get-started/installation</a>.</p>
+</blockquote>
+<p>DBT comes in two versions:</p>
+<ul>
+<li>DBT Core, that you can install yourself as self-hosted. It's free and open source.</li>
+<li>DBT Cloud, where you will get a managed version of DBT, with more features. It's a paid plan.</li>
+</ul>
+<p>We will install <strong>DBT Core</strong> in our case.</p>
+<p>Since we will use DBT with PostgreSQL, we will install DBT Core and DBT PostgreSQL connector at once.</p>
+<p>Go in you Python terminal and type:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Update PIP to the latest version</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="o">(</span>...<span class="o">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Install DBT Core and DBT PostgreSQL connector at once</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dbt-postgres
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="o">(</span>...<span class="o">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Verify versions</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>$<span class="w"> </span>dbt<span class="w"> </span>--version
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Core:
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span>-<span class="w"> </span>installed:<span class="w"> </span><span class="m">1</span>.3.1
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span>-<span class="w"> </span>latest:<span class="w">    </span><span class="m">1</span>.3.1<span class="w"> </span>-<span class="w"> </span>Up<span class="w"> </span>to<span class="w"> </span>date!
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Plugins:
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span>-<span class="w"> </span>postgres:<span class="w"> </span><span class="m">1</span>.3.1<span class="w"> </span>-<span class="w"> </span>Up<span class="w"> </span>to<span class="w"> </span>date!
+</code></pre></div>
+<h3 id="create-your-first-project">Create your first project</h3>
+<p>DBT works with projects, containing your configuration, SQL models, and much more.</p>
+<p>Create your first one with <code>DBT init</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>dbt<span class="w"> </span>init<span class="w"> </span>quick_workshop
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="m">09</span>:47:12<span class="w">  </span>Running<span class="w"> </span>with<span class="w"> </span><span class="nv">dbt</span><span class="o">=</span><span class="m">1</span>.3.1
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="m">09</span>:47:12<span class="w">  </span>Creating<span class="w"> </span>dbt<span class="w"> </span>configuration<span class="w"> </span>folder<span class="w"> </span>at<span class="w"> </span>/workspace/.dbt
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Which<span class="w"> </span>database<span class="w"> </span>would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>use?
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span>postgres
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="o">(</span>...<span class="o">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Your<span class="w"> </span>new<span class="w"> </span>dbt<span class="w"> </span>project<span class="w"> </span><span class="s2">&quot;quick_workshop&quot;</span><span class="w"> </span>was<span class="w"> </span>created!
+</code></pre></div>
+<p>2 new folders appeared in your directory, <code>Logs</code>and <code>quick_workshop</code>.</p>
+<p>Move to this project folder with your terminal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Go to new project folder</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>quick_workshop
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># list content files</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$<span class="w"> </span>ls
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>README.md<span class="w">  </span>analyses<span class="w">  </span>dbt_project.yml<span class="w">  </span>macros<span class="w">  </span>models<span class="w">  </span>seeds<span class="w">  </span>snapshots<span class="w">  </span>tests
+</code></pre></div>
+<p>Congrats, your first project is created!</p>
+<p>Quick description about these directories:</p>
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>analyses</td>
+<td>where you can compile SQL queries, more often for later usage as analytical queries</td>
+</tr>
+<tr>
+<td>macros</td>
+<td>blocks of code that you can reause multiple times</td>
+</tr>
+<tr>
+<td>models</td>
+<td>where you put your code. 1 file = 1 model, and you code quite often transform raw data in datasets or intermediate trandsformations</td>
+</tr>
+<tr>
+<td>seeds</td>
+<td>Static CSV data that you can load via DBT</td>
+</tr>
+<tr>
+<td>snapshots</td>
+<td>when you capture the state of your data tables, to refer to it later</td>
+</tr>
+<tr>
+<td>tests</td>
+<td>SQL/Python tests you can run to validate your data or models.</td>
+</tr>
+</tbody>
+</table>
+<p>When you initialize a DBT project, there is also the file <code>dbt-project.yml</code>, which contains useful parameters.
+A name, a version, models to build but also a <strong>profile</strong> to use.</p>
+<p>As explained before, <strong>DBT does not process data itself</strong>. There is no compute, no "power". DBT is linked to something doing transformation tasks. Most famous ones are PostreSQL, BigQuery, Snowflake, Spark, ... 
+Here in profile, you can redirect this project to a profile to use.</p>
+<p>Keep it like the screenshot ie. <code>quick_workshop</code>.</p>
+<p><img alt="AI Notebook - Terminal button" src="../img/dbtproject.png" /></p>
+<h3 id="connect-dbt-to-your-postgresql-server">Connect DBT to your PostgreSQL server</h3>
+<p>DBT connects to your datawarehouse using a profile, which is a <code>.yml</code> file created during our first project init. You were notified about his creation during the <code>dbt init</code>in the previous step, and his directoy path was also shown.</p>
+<p>Let's edit this file:</p>
+<ol>
+<li>Open your Python terminal.</li>
+<li>Open your <code>profile.yml</code> file, in our case it's in <code>/workspace/.dbt/profiles.yml</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Open profile.yml with your preferred code editor such as Vim/nano/...</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>nano<span class="w"> </span>/workspace/.dbt/profiles.yml
+</code></pre></div>
+<p>By default, your profile should look like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>quick_workshop:
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  outputs:
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    dev:
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>      type: postgres
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>      threads: [1 or more]
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>      host: [host]
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>      port: [port]
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>      user: [dev_username]
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>      pass: [dev_password]
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>      dbname: [dbname]
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>      schema: [dev_schema]
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    prod:
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>      type: postgres
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>      threads: [1 or more]
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>      host: [host]
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>      port: [port]
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>      user: [prod_username]
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>      pass: [prod_password]
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>      dbname: [dbname]
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>      schema: [prod_schema]
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>  target: dev
+</code></pre></div>
+<p>Replace values with your PostgreSQL server informations.</p>
+<p>In our case, with an OVHcloud PostgreSQL service:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>quick_workshop:
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  outputs:
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    dev:
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>      type: postgres
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>      threads: 4
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>      host: postgresql-5c66e728-o90e8df85.database.cloud.ovh.net
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>      port: 20184
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>      user: avdadmin
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>      pass: hmTiDdN0y*********
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>      dbname: defaultdb
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>      schema: development
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>      sslmode: require
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    prod:
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>      type: postgres
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>      threads: 4
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>      host: postgresql-5c66e728-o90e8df85.database.cloud.ovh.net
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>      port: 20184
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>      user: avnadmin
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>      pass: hmTiDdN0y*********                                
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>      dbname: defaultdb
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>      schema: production
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>      sslmode: require
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>  target: dev
+</code></pre></div>
+<p>Notice few things :</p>
+<ul>
+<li>You can get a development and a production environment, or even more.  Here, in the target, <strong>we ONLY interact with dev</strong>.</li>
+<li>You can differenciate the schemas used if you want to. We did it there, with the same database server BUT two schemas.</li>
+<li>SSL mode is required for OVHcloud databases services, but not if you are running PostgreSQL locally.</li>
+<li>1 thread means no tasks parralelization. Default is 4. it mean DBT will run 4 jobs in parralel. If you put it to 1, it will wait to end the first tasks to start a new one.</li>
+</ul>
+<blockquote>
+<p>A best practice is to fully separate development and production environnment. First to avoid human mistakes such as data deletion, but also to isolate compute resources. Having an splitted dev platform will allow you to run intensive queries without being scared to "disturb" production performances. </p>
+</blockquote>
+<p>Save this configuration and close this <code>profile.yml</code> file.</p>
+<h3 id="test-your-environment">Test your environment</h3>
+<p>First, run a debug:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>quick_workshop$<span class="w"> </span>dbt<span class="w"> </span>debug
+</code></pre></div>
+<p><img alt="AI Notebook - Terminal button" src="../img/dbtdebug.png" /></p>
+<p>If all checks have passed, we are good! DBT is able to find your configuration and able to connect to PostgreSQL.</p>
+<h3 id="perform-a-first-dummy-dbt-run">Perform a first dummy DBT run</h3>
+<p>During the project initialization, DBT pushed examples inside the <code>models</code> folder.</p>
+<p>When your perform a DBT run, DBT looks for models inside this folder and will run them.</p>
+<blockquote>
+<p>If you go back to the previous step, you will notice at the end of your <code>dbt_project.yml</code> configuration that we asked to build models inside /models/examples.</p>
+</blockquote>
+<p>Perform your first run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>quick_workshop$<span class="w"> </span>dbt<span class="w"> </span>run
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">(</span>...<span class="o">)</span>
+</code></pre></div>
+<p><img alt="DBT run" src="../img/dbtrun.png" /></p>
+<p>As shown in the result, 2 models were completed successfully.</p>
+<p>These models are dummy ones. You can check what's inside by browing into <code>/models/examples</code> and open the <code>.SQL</code> files. 
+In short, the first SQL model will perform a SELECT on a fake source data, and the second DBT model will perform a SELECT on top of the first SQL model. </p>
+<p>The good thing is, DBT is able to materialize results. so you can reuse your results easily (like, hmmm, for BI reports maybe ?<img alt="😉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f609.svg" title=":wink:" />). It was the case for these two models. </p>
+<p>The most used materializations are <code>views</code>and second ones are <code>tables</code>.
+A <code>view</code> can be seen as a virtual table. every time you ask for it, the model is rebuilt. It <strong>does not store data</strong> in your datawarehouse but will virtually aggregate information to create something to <em>view</em>.
+A <code>table</code> will create a real table in your datawarehouse. You wrote something on disks. </p>
+<blockquote>
+<p><img alt="💡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a1.svg" title=":bulb:" /> More information and more materialization options are available with DBT <a href="https://docs.getdbt.com/docs/build/materializations">https://docs.getdbt.com/docs/build/materializations</a>.</p>
+</blockquote>
+<p>Both have pros and cons, and the power of DBT is that you can specify this materialization directly in your models. </p>
+<p>As an example, if I select <code>table</code> here is what i can see inside my PostgreSQL cluster now:</p>
+<p><img alt="PgAdmin - view of dummy project" src="../img/pgadmin1.png" /></p>
+<h2 id="dbt-is-correctly-initialized">DBT is correctly initialized!</h2>
+<p>Now that we runned our first DBT run, let's bring datasets and build our own models! </p>
+<p>Go to the <a href="../part3ingest/">next part, data ingestion</a>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>

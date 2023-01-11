@@ -15,10 +15,10 @@ with customers as (
 
 But since your data team warned you about updates to come, the best is to proceed as follow:
 
-1/ create a CSV file called for exampe raw_suspicious.csv, inside quick_workshop/seeds/.
-2/ add one column, and inside the suspicious email providers such as @facebook.com.
+1/ create a CSV file called for example raw_suspicious.csv, inside quick_workshop/seeds/.
+2/ add one column, and inside put the suspicious email providers such as @facebook.com.
 3/ do a DBT seed, it will create a new table called raw_suspicious.
-4/ now in your SQL queries, you can refer to this new table instead of harcoded values.
+4/ now in your SQL queries, you can refer to this new table instead of harcoded values. Example inside suspicious.sql file.
 
 A best practice should be to create this part as a DBT macro, so you can reuse it on multiple queries later.
 

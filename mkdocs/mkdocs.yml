@@ -1,6 +1,24 @@
-site_name: Workshop home
+site_name: Workshop DBT + PostgreSQL + Metabase
 site_url: ""
 nav:
-    - Github Repository (fake data, exercises): https://github.com/baaastijn/dbt-postgresql-metabase-workshop
-    - Workshop steps: index.md
-theme: readthedocs
+    - Home: index.md
+    - Part 1 -  Setup your environment:  part1setup.md
+    - Part 2 - Install DBT: part2dbt.md
+    - Part 3 - Ingest data (badly): part3ingest.md
+    - Part 4 - Transform data with DBT: part4transform.md
+    - Part 5 - Visualize with Metabase: part5metabase.md
+    - Conclusion: part6conclusion.md
+theme: material
+repo_url: https://github.com/baaastijn/dbt-postgresql-metabase-workshop
+repo_name: baaastijn/dbt-postgresql-metabase-workshop
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
