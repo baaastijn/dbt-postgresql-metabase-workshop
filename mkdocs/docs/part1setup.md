@@ -48,7 +48,7 @@ From an architecture perspective, it will look like this in the cloud:
 
 ## Step 1: (optional) prepare a cloud Python environment
 
-> :man_mage: As explained previously, we will use OVHcloud products in this workshop. It's optional, **you can skip this step if you prefer to use your own Python environment (your computer for example)**.
+> :snake: As explained previously, we will use OVHcloud products in this workshop. It's optional, **you can skip this step if you prefer to use your own Python environment (your computer for example)**.
 
 This workshop needs a Python environment, with the ability to browse files easily.
 To be more visual and practical, we will opt for a Python notebook code editor. Most used ones in the world are JupyterLab and VSCode. We will create one in the cloud now.
@@ -144,6 +144,6 @@ You can find alternative websites with detailled tutorials like <https://www.pos
 
 > :bulb: installing a database server, transformation tools and dataviz tool in the same local environment is really dangerous. These stunts are performed by trained professionals, don't try this in production..
 
-## Setup done!
+## :thumbsup: Setup done!
 
 The full workshop environment is now up and running! Now move to the [Part 2: install DBT](part2dbt.md)

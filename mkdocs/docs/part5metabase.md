@@ -1,4 +1,4 @@
-## Why is Metabase so cool?
+## :tiger: Why is Metabase so cool?
 
 Similarly to DBT, [Metabase](https://www.metabase.com) is an open source software provided as a paid cloud version or free self-hosted.
 
@@ -107,19 +107,19 @@ Example:
 Our sales team discovered your BI platform project. They would love a first dashboard with 4 informations. we don't judge their relevancy here :wink: :
 
 - Total of customers we have.
-- Table with top 5 customers information.
-- Bar chart with orders repartition per customers.
-- Cascade chart with revenues and orders per country.
+- Table with top 5 customers information, sorted by amount of orders (not revenue).
+- Distribution of amount of orders per customer as a bar chart.
+- Mixed chart with revenue in vertical Bars and amount of orders as Line per country.
 
 All of that with a dashboard filter, per country.
 
-At the end it should look a bit like this:
+At the end it should look a bit like this (again, dummy representations):
 
 ![Metabase - visualization example](img/metabase8.png)
 
 > :bulb: If you have some issues with this exercise, you'll find queries details in this repository, as always!
 
-## Dashboard made easy!
+## :thumbsup: Dashboards made easy!
 
 As you can feel it, Metabase *is* cool. tons of features yet quite simple to install and run. With an open source mindset.
 

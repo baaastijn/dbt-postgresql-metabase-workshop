@@ -1,7 +1,7 @@
 Great! On the previous part, we setup a Python environment and a datawarehouse via PostgreSQL.
 It's now time to install the first data software, DBT!
 
-## :monkey_face: What the hell is DBT?
+## :octopus: What the hell is DBT?
 
 Good question! I still don't know *exactly* after few hours. DBT is the acronym of Data Build Tool and was created in 2016 by some folks of RJMetrics.
 
@@ -242,7 +242,7 @@ As an example, if I select `table` here is what i can see inside my PostgreSQL c
 ![PgAdmin - view of dummy project](img/pgadmin1.png)
 
 
-## DBT is correctly initialized!
+## :thumbsup: DBT is correctly initialized!
 
 Now that we runned our first DBT run, let's bring datasets and build our own models! 
 

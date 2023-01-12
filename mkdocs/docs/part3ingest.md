@@ -21,7 +21,7 @@ Seeds workflow is:
 
 ### Download fake data
 
-> :man_mage: For easiness, this fake data is inspired from official dbt example called `jaffle_shop`but with extra columns for better use-cases with Metabase (more fields, and more lines). Full credits goes to this official DBT example repository.
+> :hatched_chick: For easiness, this fake data is inspired from official dbt example called `jaffle_shop`but with extra columns for better use-cases with Metabase (more fields, and more lines). Full credits goes to this official DBT example repository.
 
 **Download** the fake data provided in this workshop Github repository.
 It consist of 3 CSV files, wike fake data (generated with www.Mockaroo.com).
@@ -84,6 +84,6 @@ when taking a look with a PostgreSQL client like PgAdmin, you can see three new 
 
 ![PgAdmin - new tables](img/pgadmin2.png)
 
-## Data is now loaded!
+## :thumbsup: Data is now loaded!
 
 Data is loaded, it's now time to generate analytics-ready views and tables! Go to the [next part, with transformations](part4transform.md).

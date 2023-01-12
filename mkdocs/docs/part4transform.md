@@ -224,12 +224,12 @@ If you are using OVHcloud AI Notebook, it support port forwarding. Take the link
 
 **URL example** : https://f746650a-e99c-4ab5-b7e4-5d79c32cb134.notebook.gra.ai.cloud.ovh.net/lab/tree/quick_workshop
 
-**Access port 8001**: https://f746650a-e99c-4ab5-b7e4-5d79c32cb134-8001.notebook.gra.ai.cloud.ovh.net
+**Access port 8001**: https://f746650a-e99c-4ab5-b7e4-5d79c32cb134**-8001**.notebook.gra.ai.cloud.ovh.net
 
-![DBT run](img/schema.png)
+![Documentation](img/documentation.png)
 
 
-## That's a one small step for man, but...
+## :thumbsup: That's a one small step for man, but...
 
 Congrats, you now had a first model running, and hopefully a good understanding about few DBT features.
 
