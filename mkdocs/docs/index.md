@@ -2,6 +2,8 @@
 
 ![Twitter URL](https://img.shields.io/twitter/url?label=Author&style=social&url=https%3A%2F%2Ftwitter.com%2FBastienOvh)
 
+![GitHub](https://img.shields.io/github/license/baaastijn/dbt-postgresql-metabase-workshop)
+
 Step by step workshop to build a basic modern analytics platform with DBT, PostgreSQL and Metabase.
 Only open source tools, and can be hosted locally on your computer or in the cloud!
 
