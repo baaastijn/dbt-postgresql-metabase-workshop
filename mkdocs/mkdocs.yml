@@ -6,7 +6,8 @@ nav:
     - Part 2 - Install DBT: part2dbt.md
     - Part 3 - Ingest data (badly): part3ingest.md
     - Part 4 - Transform data with DBT: part4transform.md
-    - Part 5 - Visualize with Metabase: part5metabase.md
+    - Part 5 - Build documentation: part5documentation.md
+    - Part 6 - Visualize with Metabase: part5metabase.md
     - Conclusion: part6conclusion.md
 theme: material
 repo_url: https://github.com/baaastijn/dbt-postgresql-metabase-workshop
