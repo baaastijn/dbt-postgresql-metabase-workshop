@@ -1,13 +1,13 @@
 Great! On the previous part, we setup a Python environment and a datawarehouse via PostgreSQL.
-It's now time to install the first data software, DBT!
+It's now time to install the first data software, dbt!
 
-## :octopus: What the hell is DBT?
+## :octopus: What the hell is dbt?
 
-Good question! I still don't know *exactly* after few hours. DBT is the acronym of Data Build Tool and was created in 2016 by some folks of RJMetrics.
+Good question! I still don't know *exactly* after few hours. dbt is the acronym of Data Build Tool and was created in 2016 by some folks of RJMetrics.
 
 Here is quote from their official website: *dbt is a transformation workflow that helps you get more work done while producing higher quality results. You can use dbt to modularize and centralize your analytics code, while also providing your data team with guardrails typically found in software engineering workflows. Collaborate on data models, version them, and test and document your queries before safely deploying them to production, with monitoring and visibility*.
 
-DBT is an answer to all team facing analytics issues. *Who made a change on this query?. Where can I find explanation about this data? How can i rollback to the queries made 1 week ago? How can I test safely before running is in production?*. You see what I mean. Artisanal mode.
+dbt is an answer to all team facing analytics issues. *Who made a change on this query?. Where can I find explanation about this data? How can i rollback to the queries made 1 week ago? How can I test safely before running is in production?*. You see what I mean. Artisanal mode.
 
 If I try to sum-up, with data analytics your start with multiple data sources and end up with results, like reports or dashboards. Between sources and results, the workflows you put has to be structured, tested, documented, collaborative, and shared safely.
 
@@ -15,21 +15,21 @@ We already do that widely for software. A devops culture. If you develop a softw
 
 Why not doing the same with data analytics ? Software engineering is here since long, now let's embrace analytics engineering! 
 
-DBT is one of the answer :) Don't hesitate to read more with the [DBT viewpoint](https://docs.getdbt.com/community/resources/viewpoint).
+dbt is one of the answer :) Don't hesitate to read more with the [dbt viewpoint](https://docs.getdbt.com/community/resources/viewpoint).
 
 
-## Install DBT
+## Install dbt
 
 > :bulb: Check official documentation for complete guidance: <https://docs.getdbt.com/docs/get-started/installation>.
 
-DBT comes in two versions:
+dbt comes in two versions:
 
-- DBT Core, that you can install yourself as self-hosted. It's free and open source.
-- DBT Cloud, where you will get a managed version of DBT, with more features. It's a paid plan.
+- dbt Core, that you can install yourself as self-hosted. It's free and open source.
+- dbt Cloud, where you will get a managed version of dbt, with more features. It's a paid plan.
 
-We will install **DBT Core** in our case.
+We will install **dbt Core** in our case.
 
-Since we will use DBT with PostgreSQL, we will install DBT Core and DBT PostgreSQL connector at once.
+Since we will use dbt with PostgreSQL, we will install dbt Core and dbt PostgreSQL connector at once.
 
 Go in you Python terminal and type:
 
@@ -38,7 +38,7 @@ Go in you Python terminal and type:
 $ python -m pip install --upgrade pip
 (...)
 
-# Install DBT Core and DBT PostgreSQL connector at once
+# Install dbt Core and dbt PostgreSQL connector at once
 $ pip install dbt-postgres
 (...)
 
@@ -54,9 +54,9 @@ Plugins:
 
 ### Create your first project
 
-DBT works with projects, containing your configuration, SQL models, and much more.
+dbt works with projects, containing your configuration, SQL models, and much more.
 
-Create your first one with `DBT init`:
+Create your first one with `dbt init`:
 
 ``` bash
 $ dbt init quick_workshop
@@ -90,24 +90,24 @@ Quick description about these directories:
 | analyses | where you can compile SQL queries, more often for later usage as analytical queries  |
 | macros | blocks of code that you can reause multiple times |
 | models | where you put your code. 1 file = 1 model, and you code quite often transform raw data in datasets or intermediate trandsformations |
-| seeds | Static CSV data that you can load via DBT |
+| seeds | Static CSV data that you can load via dbt |
 | snapshots | when you capture the state of your data tables, to refer to it later |
 | tests | SQL/Python tests you can run to validate your data or models. |
 
 
-When you initialize a DBT project, there is also the file `dbt-project.yml`, which contains useful parameters.
+When you initialize a dbt project, there is also the file `dbt-project.yml`, which contains useful parameters.
 A name, a version, models to build but also a **profile** to use.
 
-As explained before, **DBT does not process data itself**. There is no compute, no "power". DBT is linked to something doing transformation tasks. Most famous ones are PostreSQL, BigQuery, Snowflake, Spark, ... 
+As explained before, **dbt does not process data itself**. There is no compute, no "power". dbt is linked to something doing transformation tasks. Most famous ones are PostreSQL, BigQuery, Snowflake, Spark, ... 
 Here in profile, you can redirect this project to a profile to use.
 
 Keep it like the screenshot ie. `quick_workshop`.
 
 ![AI Notebook - Terminal button](img/dbtproject.png)
 
-### Connect DBT to your PostgreSQL server
+### Connect dbt to your PostgreSQL server
 
-DBT connects to your datawarehouse using a profile, which is a `.yml` file created during our first project init. You were notified about his creation during the `dbt init`in the previous step, and his directoy path was also shown.
+dbt connects to your datawarehouse using a profile, which is a `.yml` file created during our first project init. You were notified about his creation during the `dbt init`in the previous step, and his directoy path was also shown.
 
 Let's edit this file:
 
@@ -186,7 +186,7 @@ Notice few things :
 - You can get a development and a production environment, or even more.  Here, in the target, **we ONLY interact with dev**.
 - You can differenciate the schemas used if you want to. We did it there, with the same database server BUT two schemas.
 - SSL mode is required for OVHcloud databases services, but not if you are running PostgreSQL locally.
-- 1 thread means no tasks parralelization. Default is 4. it mean DBT will run 4 jobs in parralel. If you put it to 1, it will wait to end the first tasks to start a new one.
+- 1 thread means no tasks parralelization. Default is 4. it mean dbt will run 4 jobs in parralel. If you put it to 1, it will wait to end the first tasks to start a new one.
 
 > A best practice is to fully separate development and production environnment. First to avoid human mistakes such as data deletion, but also to isolate compute resources. Having an splitted dev platform will allow you to run intensive queries without being scared to "disturb" production performances. 
 
@@ -202,13 +202,13 @@ quick_workshop$ dbt debug
 
 ![AI Notebook - Terminal button](img/dbtdebug.png)
 
-If all checks have passed, we are good! DBT is able to find your configuration and able to connect to PostgreSQL.
+If all checks have passed, we are good! dbt is able to find your configuration and able to connect to PostgreSQL.
 
-### Perform a first dummy DBT run
+### Perform a first dummy dbt run
 
-During the project initialization, DBT pushed examples inside the `models` folder.
+During the project initialization, dbt pushed examples inside the `models` folder.
 
-When your perform a DBT run, DBT looks for models inside this folder and will run them.
+When your perform a dbt run, dbt looks for models inside this folder and will run them.
 
 > If you go back to the previous step, you will notice at the end of your `dbt_project.yml` configuration that we asked to build models inside /models/examples.
 
@@ -219,31 +219,31 @@ quick_workshop$ dbt run
 (...)
 ```
 
-![DBT run](img/dbtrun.png)
+![dbt run](img/dbtrun.png)
 
 As shown in the result, 2 models were completed successfully.
 
 These models are dummy ones. You can check what's inside by browing into `/models/examples` and open the `.SQL` files. 
-In short, the first SQL model will perform a SELECT on a fake source data, and the second DBT model will perform a SELECT on top of the first SQL model. 
+In short, the first SQL model will perform a SELECT on a fake source data, and the second dbt model will perform a SELECT on top of the first SQL model. 
 
-The good thing is, DBT is able to materialize results. so you can reuse your results easily (like, hmmm, for BI reports maybe ?:wink:). It was the case for these two models. 
+The good thing is, dbt is able to materialize results. so you can reuse your results easily (like, hmmm, for BI reports maybe ?:wink:). It was the case for these two models. 
 
 The most used materializations are `views`and second ones are `tables`.
 A `view` can be seen as a virtual table. every time you ask for it, the model is rebuilt. It **does not store data** in your datawarehouse but will virtually aggregate information to create something to *view*.
 A `table` will create a real table in your datawarehouse. You wrote something on disks. 
 
-> :bulb: More information and more materialization options are available with DBT <https://docs.getdbt.com/docs/build/materializations>.
+> :bulb: More information and more materialization options are available with dbt <https://docs.getdbt.com/docs/build/materializations>.
 
 
-Both have pros and cons, and the power of DBT is that you can specify this materialization directly in your models. 
+Both have pros and cons, and the power of dbt is that you can specify this materialization directly in your models. 
 
 As an example, if I select `table` here is what i can see inside my PostgreSQL cluster now:
 
 ![PgAdmin - view of dummy project](img/pgadmin1.png)
 
 
-## :thumbsup: DBT is correctly initialized!
+## :thumbsup: dbt is correctly initialized!
 
-Now that we runned our first DBT run, let's bring datasets and build our own models! 
+Now that we runned our first dbt run, let's bring datasets and build our own models! 
 
 Go to the [next part, data ingestion](part3ingest.md).

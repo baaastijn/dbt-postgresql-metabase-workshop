@@ -11,12 +11,12 @@ How can you get more actionable views? For example:
 - Revenues per country.
 - ...
 
-Without DBT, you can get those answers with classic SQL syntax, directly by querying PostgreSQL 
+Without dbt, you can get those answers with classic SQL syntax, directly by querying PostgreSQL 
 It will work fine. But wait.
 
 Imagine that you don't have one query but one of a dozen, nested together like pipelies (first *anonymize data*, then *remove fraud*, then *calculate revenues*, ...) not run punctually but with recurrence, with vast amount of data, a critical production. Also imagine that you want to share your queries globally and with control, with versionning, tests, generated documentation and co? 
 
-That's when DBT is relevant, bringing your transformation workflows and control over SQL queries or Python code.
+That's when dbt is relevant, bringing your transformation workflows and control over SQL queries or Python code.
 
 ## Create your first SQL model
 
@@ -101,7 +101,7 @@ Few explanations about this code sample:
 
 ## Reconfigure your project 
 
-During DBT project initialization, DBT was configured to run models only from `/examples` directory.
+During dbt project initialization, dbt was configured to run models only from `/examples` directory.
 
 Current configuration inside `dbt_project.yml` is:
 
@@ -124,9 +124,9 @@ models:
 
 It will now take into account our SQL files pushed at the *root* of `quick_workshop/models`.
 
-## Run DBT
+## Run dbt
 
-Now let's run DBT. It will browse the *quick_workshop/models* directory:
+Now let's run dbt. It will browse the *quick_workshop/models* directory:
 
 ```python
 quick_workshop$ dbt run
@@ -156,9 +156,9 @@ Good news this is exactly what we have :wink:.
 ![PgAdmin - new tables](img/pgadmin3.png)
 
 
-## Exercise 1: build another DBT model :wink:
+## Exercise 1: build another dbt model :wink:
 
-Now that we discovered a bit more how DBT works, let's try to build another model yourself.
+Now that we discovered a bit more how dbt works, let's try to build another model yourself.
 
 Our Marketing team would love to target more accurately some geographical areas, and want to create a country dashboard. 
 

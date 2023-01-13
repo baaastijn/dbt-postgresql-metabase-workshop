@@ -1,6 +1,6 @@
 ## :tiger: Why is Metabase so cool?
 
-Similarly to DBT, [Metabase](https://www.metabase.com) is an open source software provided as a paid cloud version or free self-hosted.
+Similarly to dbt, [Metabase](https://www.metabase.com) is an open source software provided as a paid cloud version or free self-hosted.
 
 Metabase is awesome in multiple ways. It can be defined as a BI tools, with two main parts:
 
@@ -62,7 +62,7 @@ Metabase provides a sample database, and one that we called `Workshop`.
 
 ![Metabase - browse data](img/metabase3.png)
 
-If you browse this data, you will eventually see all the tables generated via DBT.
+If you browse this data, you will eventually see all the tables generated via dbt.
 The ones with raw data, and the ones generated (`customers` and `countries`).
 
 Metabase built a handy feature called X-ray (the lightning strike), generating automatically some reports about a specific table.
@@ -90,7 +90,7 @@ As an example, do a `Count of rows` by `country`, then click on the small `Previ
 
 ![Metabase - query editor](img/metabase6.png)
 
-> :bulb: on the `+ NEW` button, you can also create a new **SQL query via code editor**. You can also create **Metabase models**, like in DBT. you have the ability to synchronize your DBT models and documentation with Metabase via extra python package such as [dbt-metabase](https://github.com/gouline/dbt-metabase).
+> :bulb: on the `+ NEW` button, you can also create a new **SQL query via code editor**. You can also create **Metabase models**, like in dbt. you have the ability to synchronize your dbt models and documentation with Metabase via extra python package such as [dbt-metabase](https://github.com/gouline/dbt-metabase).
 
 ## Add a visualization to the dashboard
 

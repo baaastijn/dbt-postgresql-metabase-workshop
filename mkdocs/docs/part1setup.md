@@ -1,6 +1,6 @@
 ## Cloud or not cloud? Chose wisely!
 
-This workshop will require to install few things such as DBT (Python package), a PostgreSQL client and Metabase (Docker image for the easiest installation way).
+This workshop will require to install few things such as dbt (Python package), a PostgreSQL client and Metabase (Docker image for the easiest installation way).
 
 You can opt to install everything locally on your computer if you have enough access rights to do it.
 
@@ -19,7 +19,7 @@ Requirements may differ if you replay this workshop in the cloud or on your comp
 
 **Requirements**:
 
-- A Python >= 3.8 environment with ability to install new packages such as DBT
+- A Python >= 3.8 environment with ability to install new packages such as dbt
 - A PostgreSQL database (we will see how to install it)
 - A PostgreSQL client to query a PostgreSQL database (like psql or PgAdmin)
 - Ability to run Docker images (locally or in the cloud) or execute JAR file (for Metabase installation)
@@ -39,7 +39,7 @@ From an architecture perspective, it will look like this in the cloud:
 - OVHcloud account created
 - Python environment : OVHcloud AI Notebook (AWS doppeldanger : AWS Sagemaker notebook)
 - Database: OVHcloud PostgreSQL (AWS: RDS for PostgreSQL)
-- DBT: installed in a OVHcloud Jypter Notebook (AWS: Sagemaker Notebook)
+- dbt: installed in a OVHcloud Jupyter Notebook (AWS: Sagemaker Notebook)
 - Metabase: installed in a OVHcloud virtual Machine (AWS: EC2 VM)
 - PostgreSQL client: PgAdmin
 - SSH client (Windows: Putty or similar)
@@ -146,4 +146,4 @@ You can find alternative websites with detailled tutorials like <https://www.pos
 
 ## :thumbsup: Setup done!
 
-The full workshop environment is now up and running! Now move to the [Part 2: install DBT](part2dbt.md)
+The full workshop environment is now up and running! Now move to the [Part 2: install dbt](part2dbt.md)

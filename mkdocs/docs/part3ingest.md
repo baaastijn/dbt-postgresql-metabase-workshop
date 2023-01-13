@@ -1,10 +1,10 @@
 
-Your DBT project is now ready to be used. Time to play with data!
+Your dbt project is now ready to be used. Time to play with data!
 
 
-## About DBT and seeds
+## About dbt and seeds
 
-DBT allows CSV data ingestion, called `seeds` (remember the *seeds* folder?).
+dbt allows CSV data ingestion, called `seeds` (remember the *seeds* folder?).
 
 Best practive is to use `seeds` when you need to control static and versionned data.
 
@@ -21,7 +21,7 @@ Seeds workflow is:
 
 ### Download fake data
 
-> :hatched_chick: For easiness, this fake data is inspired from official dbt example called `jaffle_shop`but with extra columns for better use-cases with Metabase (more fields, and more lines). Full credits goes to this official DBT example repository.
+> :hatched_chick: For easiness, this fake data is inspired from official dbt example called `jaffle_shop`but with extra columns for better use-cases with Metabase (more fields, and more lines). Full credits goes to this official dbt example repository.
 
 **Download** the fake data provided in this workshop Github repository.
 It consist of 3 CSV files, wike fake data (generated with www.Mockaroo.com).
@@ -39,7 +39,7 @@ seeds$wget https://raw.githubusercontent.com/baaastijn/dbt-postgresql-metabase-w
 seeds$wget https://raw.githubusercontent.com/baaastijn/dbt-postgresql-metabase-workshop/main/fake_data/raw_customers.csv
 seeds$wget https://raw.githubusercontent.com/baaastijn/dbt-postgresql-metabase-workshop/main/fake_data/raw_payments.csv
 
-# Go back to your main DBT directory
+# Go back to your main dbt directory
 seeds$ cd ..
 ```
 
@@ -55,7 +55,7 @@ From a entity relationship diagram (ERD) point of view, data is linked like this
 ![Data ERD](img/fakedata.schema.png)
 
 
-Now that your data is downloaded inside your `quick_workshop/seeds` directory, run a `DBT seed`:
+Now that your data is downloaded inside your `quick_workshop/seeds` directory, run a `dbt seed`:
 
 ``` py
 quick_workshop$dbt seed --full-refresh
