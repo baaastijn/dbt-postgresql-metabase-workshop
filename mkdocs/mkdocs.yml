@@ -1,11 +1,11 @@
-site_name: Workshop DBT + PostgreSQL + Metabase
+site_name: Workshop dbt + PostgreSQL + Metabase
 site_url: ""
 nav:
     - Home: index.md
     - Part 1 -  Setup your environment:  part1setup.md
-    - Part 2 - Install DBT: part2dbt.md
+    - Part 2 - Install dbt: part2dbt.md
     - Part 3 - Ingest data (badly): part3ingest.md
-    - Part 4 - Transform data with DBT: part4transform.md
+    - Part 4 - Transform data with dbt: part4transform.md
     - Part 5 - Build documentation: part5documentation.md
     - Part 6 - Visualize with Metabase: part5metabase.md
     - Conclusion: part6conclusion.md
