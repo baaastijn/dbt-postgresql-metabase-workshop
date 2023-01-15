@@ -123,4 +123,4 @@ At the end it should look a bit like this (again, dummy representations):
 
 As you can feel it, Metabase *is* cool. tons of features yet quite simple to install and run. With an open source mindset.
 
-This workshop is over, time for a [quick conclusion](part6conclusion.md)!
+This workshop is over, time for a [quick conclusion](part7conclusion.md)!
