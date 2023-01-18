@@ -88,8 +88,8 @@ Quick description about these directories:
 | Directory | Description |
 | --- | --- |
 | analyses | where you can compile SQL queries, more often for later usage as analytical queries  |
-| macros | blocks of code that you can reause multiple times |
-| models | where you put your code. 1 file = 1 model, and you code quite often transform raw data in datasets or intermediate trandsformations |
+| macros | blocks of code that you can reuse multiple times |
+| models | where you put your code. 1 file = 1 model. Usually your code transforms raw data in intermediate or final datasets |
 | seeds | Static CSV data that you can load via dbt |
 | snapshots | when you capture the state of your data tables, to refer to it later |
 | tests | SQL/Python tests you can run to validate your data or models. |
@@ -107,7 +107,7 @@ Keep it like the screenshot ie. `quick_workshop`.
 
 ### Connect dbt to your PostgreSQL server
 
-dbt connects to your datawarehouse using a profile, which is a `.yml` file created during our first project init. You were notified about his creation during the `dbt init`in the previous step, and his directoy path was also shown.
+dbt connects to your datawarehouse using a profile, which is a `.yml` file created during our first project init. You were notified about his creation during the `dbt init`in the previous step, and his directory path was also shown.
 
 Let's edit this file:
 
@@ -181,14 +181,14 @@ quick_workshop:
   target: dev
 ```
 
-Notice few things :
+Notice a few things :
 
 - You can get a development and a production environment, or even more.  Here, in the target, **we ONLY interact with dev**.
 - You can differenciate the schemas used if you want to. We did it there, with the same database server BUT two schemas.
 - SSL mode is required for OVHcloud databases services, but not if you are running PostgreSQL locally.
-- 1 thread means no tasks parralelization. Default is 4. it mean dbt will run 4 jobs in parralel. If you put it to 1, it will wait to end the first tasks to start a new one.
+- 1 thread means no tasks parralelization. Default is 4. it mean dbt will run 4 jobs in parallel. If you put it to 1, it will wait to end the first tasks to start a new one.
 
-> A best practice is to fully separate development and production environnment. First to avoid human mistakes such as data deletion, but also to isolate compute resources. Having an splitted dev platform will allow you to run intensive queries without being scared to "disturb" production performances. 
+> A best practice is to fully separate development and production environment. First to avoid human mistakes such as data deletion, but also to isolate compute resources. Having an splitted dev platform will allow you to run intensive queries without being scared to "disturb" production performances. 
 
 Save this configuration and close this `profile.yml` file.
 
@@ -223,14 +223,14 @@ quick_workshop$ dbt run
 
 As shown in the result, 2 models were completed successfully.
 
-These models are dummy ones. You can check what's inside by browing into `/models/examples` and open the `.SQL` files. 
+These models are dummy ones. You can check what's inside by browsing into `/models/examples` and open the `.SQL` files. 
 In short, the first SQL model will perform a SELECT on a fake source data, and the second dbt model will perform a SELECT on top of the first SQL model. 
 
 The good thing is, dbt is able to materialize results. so you can reuse your results easily (like, hmmm, for BI reports maybe ?:wink:). It was the case for these two models. 
 
 The most used materializations are `views`and second ones are `tables`.
-A `view` can be seen as a virtual table. every time you ask for it, the model is rebuilt. It **does not store data** in your datawarehouse but will virtually aggregate information to create something to *view*.
-A `table` will create a real table in your datawarehouse. You wrote something on disks. 
+A `view` can be seen as a virtual table: every time you ask for it, the model is rebuilt. It **does not store data** in your datawarehouse but will virtually aggregate information to create something to *view*.
+A `table` will create a real table in your datawarehouse. dbt writes the result on disk. 
 
 > :bulb: More information and more materialization options are available with dbt <https://docs.getdbt.com/docs/build/materializations>.
 
