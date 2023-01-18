@@ -14,7 +14,7 @@ How can you get more actionable views? For example:
 Without dbt, you can get those answers with classic SQL syntax, directly by querying PostgreSQL 
 It will work fine. But wait.
 
-Imagine that you don't have one query but one of a dozen, nested together like pipelies (first *anonymize data*, then *remove fraud*, then *calculate revenues*, ...) not run punctually but with recurrence, with vast amount of data, a critical production. Also imagine that you want to share your queries globally and with control, with versionning, tests, generated documentation and co? 
+Imagine that you don't have one query but one of a dozen, nested together like pipelines (first *anonymize data*, then *remove fraud*, then *calculate revenues*, ...) not run punctually but with recurrence, with vast amount of data, a critical production. Also imagine that you want to share your queries globally and with control, with versionning, tests, generated documentation and co? 
 
 That's when dbt is relevant, bringing your transformation workflows and control over SQL queries or Python code.
 
@@ -149,7 +149,7 @@ quick_workshop$ dbt run
 
 ## Check the result in your datawarehouse
 
-What we are waiting for, is a new table created in our datawarehouse, countaining our aggregated data.
+What we are waiting for, is a new table created in our datawarehouse, containing our aggregated data.
 
 Good news this is exactly what we have :wink:.
 
@@ -180,7 +180,7 @@ If you are blocked, you can find the solution in this Github repository, in the 
 
 ## Exercise 2: remove suspicious accounts
 
-Our Data team is convinced that we need to remove all emails ending with **@facebook.com**, because 100% of the time it's fraudulous accounts.
+Our Data team is convinced that we need to remove all emails ending with **@facebook.com**, because 100% of the time it's fraudulent accounts.
 
 The goal here is to skip some irrelevant data that are ingested regularly.
 They also told us that they are investigating, but other emails system will have to be banned in the future.
