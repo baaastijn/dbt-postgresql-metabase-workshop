@@ -18,7 +18,7 @@ I will assume this is the first time that you will use dbt and Metabase.
 
 Initial goal is to have fun discovering some of most notorious modern data tools, with a typical use-case: analyze your orders and customers.
 
-The BI platform pipeline that we will create is similar to this schema, whith dashboards as outputs: 
+The BI platform pipeline that we will create is similar to this schema, with dashboards as outputs: 
 
 ![first BI platform](img/dbt-postgresql-metabase.png)
 
@@ -34,7 +34,7 @@ Over this workshop, you will get a first introduction to dbt and Metabase featur
 Our use case is quite simple: we are a company, with customers, orders and payments.
 We want to build nice visualization dashboards, to monitor closely our activity.
 
-More than dashboards, we want to avoid black magic, avoid technical debt, and for that we will use dbt to introduce best practive for analytics.
+More than dashboards, we want to avoid black magic, avoid technical debt, and for that we will use dbt to introduce a few best practices for analytics.
 
 What this workshop is not : it's not an intensive worshop for experts, neither something to follow for best practices (it's more the opposite since we will skip few phases like Git synchonization, dbt, tests).
 
