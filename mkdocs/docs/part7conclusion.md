@@ -5,7 +5,7 @@
 Initial goal was to discover awesome and open source data tools, how they work, and with a common use-case. 
 I do hope that this mission is completed!
 
-Do hesitate to improve this repository directly (pull request), open an issue, or share your thoughts directly.
+Do not hesitate to improve this repository directly (pull request), open an issue, or share your thoughts directly.
 
 Feel free to contribute (see the Github link on the top bar ?) and give me your feedback via <http://twitter.com/bastienovh/> .
 
