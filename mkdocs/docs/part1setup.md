@@ -75,7 +75,7 @@ Once your notebook is running (it should take less than 1 minute), you can acces
 
 ![AI Notebook - JupyterLab button](img/notebook1.png)
 
-This notebook is a Linux environment running inside a Docker image. It gives you the ability to live code directly in your web browser. You can install additional package swith classic Python commands such as `pip install`and `conda install`. 
+This notebook is a Linux environment running inside a Docker image. It gives you the ability to live code directly in your web browser. You can install additional package with classic Python commands such as `pip install`and `conda install`. 
 Also, you can share your environment with someone else just by sharing your notebook URL. Very useful during a workshop session when you need some help :wink:.
 
 Now, click on the `Terminal` icon inside this notebook.
@@ -98,7 +98,7 @@ Mine is on version 3.9.5. If you have a deprecated version, please upgrade it at
 
 ## Step 3: set up a PostgreSQL server
 
-For this workshop, we will use a PostreSQL server to store and transform our data.
+For this workshop, we will use a PostgreSQL server to store and transform our data.
 
 PostgreSQL is an open source and community-based transactional database management system, widely used accross the world. Perfect for a workshop but also for production. It has not the flexibily of modern lakehouse such as Snowflake or BigQuery (compute and storage are linked for example, and information is stored in row format, not columnar) but can be relevant in many Business Intelligence use-cases where performance is not the main criteria.
 
