@@ -47,7 +47,7 @@ seeds$ cd ..
 
 For this workshop, we will tweak the use of `seed` to import fake data.
 
-> :bulb: Usually you don't need to bring fake data like this, because you already have something in yur database. But hey it's a workshop :smirk:. If you want to extend this workshop, I recommend to ingest data with open source tools such as **Airbyte** or **Meltano**. Both can also be self-hosted or provided as SaaS offers.
+> :bulb: Usually you don't need to bring fake data like this, because you already have something in your database. But hey it's a workshop :smirk:. If you want to extend this workshop, I recommend to ingest data with open source tools such as **Airbyte** or **Meltano**. Both can also be self-hosted or provided as SaaS offers.
 
 
 From a entity relationship diagram (ERD) point of view, data is linked like this:
