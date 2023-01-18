@@ -8,7 +8,7 @@ Metabase is awesome in multiple ways. It can be defined as a BI tools, with two 
 - A dashboard tool, with a well polished and intuitive interface.
 
 Metabase **does not store your data**, but they will store your queries syntax and metadata required to build your dashboards. I guess that the name *meta(data)base* comes from this point :wink:.
-By default, for the self-hosted version, they store this data inside a SQLite database but you can opt for your own SQL database as a backend (much better for production). 
+By default, for the self-hosted version, they store this data inside a [SQLite](https://www.sqlite.org/) database but you can opt for your own SQL database as a backend (much better for production). 
 
 ## Install Metabase
 
@@ -39,7 +39,7 @@ This is the option selected for this workshop on my side, by doing this:
 3. create a new instance, from Discovery range (the cheapest) with latest Ubuntu (22.10 at the time) and public network (you need a SSH key to complete the installation).
 4. Once created, follow official Metabase instructions from their website documentation
 
-If you followed official instrcutions, shortly after installation you can connect to your metabase instance via <http://<your_VM_ip>:3000> and be redirected to the welcome screen.
+If you followed official instructions, shortly after installation you can connect to your metabase instance via `http://<your_VM_ip>:3000` and be redirected to the welcome screen.
 
 
 ## Connect your datawarehouse to Metabase
@@ -56,7 +56,7 @@ For an OVHcloud for PostgreSQL database, fill is at below (be careful, SSL is in
 ![Metabase - add PostgreSQL 1](img/metabase1.png)
 ![Metabase - add PostgreSQL 2](img/metabase2.png)
 
-If your connector is correctly configured, you should be able to browse you data through the left menu.
+If your connector is correctly configured, you should be able to browse your data through the left menu.
 
 Metabase provides a sample database, and one that we called `Workshop`.
 
@@ -104,7 +104,7 @@ Example:
 
 ## Exercise 3: build your first dashboard
 
-Our sales team discovered your BI platform project. They would love a first dashboard with 4 informations. we don't judge their relevancy here :wink: :
+Our sales team discovered your BI platform project. They would love a first dashboard with 4 informations. We don't judge their relevancy here :wink: :
 
 - Total of customers we have.
 - Table with top 5 customers information, sorted by amount of orders (not revenue).
@@ -121,6 +121,6 @@ At the end it should look a bit like this (again, dummy representations):
 
 ## :thumbsup: Dashboards made easy!
 
-As you can feel it, Metabase *is* cool. tons of features yet quite simple to install and run. With an open source mindset.
+As you can feel it, Metabase *is* cool. Tons of features yet quite simple to install and run. With an open source mindset.
 
 This workshop is over, time for a [quick conclusion](part7conclusion.md)!
