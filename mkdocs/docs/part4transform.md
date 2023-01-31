@@ -109,7 +109,7 @@ Current configuration inside `dbt_project.yml` is:
 models:
     quick_workshop:
         example
-            +materialized: table
+            +materialized: view
 ```
 
 Since we deleted the `quick_workshop/models/example` directory, we have to modify this part.
