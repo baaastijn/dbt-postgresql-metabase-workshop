@@ -101,18 +101,18 @@ Few explanations about this code sample:
 
 ## Reconfigure your project 
 
-During dbt project initialization, dbt was configured to run models only from `/examples` directory.
+During dbt project initialization, dbt was configured to run models only from `/example` directory.
 
 Current configuration inside `dbt_project.yml` is:
 
 ```
 models:
     quick_workshop:
-        examples
+        example
             +materialized: table
 ```
 
-Since we deleted the `quick_workshop/models/examples` directory, we have to modify this part.
+Since we deleted the `quick_workshop/models/example` directory, we have to modify this part.
 
 Modify the file `dbt_project.yml`and put this new configuration instead:
 

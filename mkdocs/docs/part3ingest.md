@@ -23,12 +23,12 @@ Seeds workflow is:
 
 > :hatched_chick: For easiness, this fake data is inspired from official dbt example called `jaffle_shop`but with extra columns for better use-cases with Metabase (more fields, and more lines). Full credits goes to this official dbt example repository.
 
-**Download** the fake data provided in this workshop Github repository.
+**Download** the fake data provided in this workshop Github repository (see below).
 It consist of 3 CSV files, with fake data (generated with www.Mockaroo.com).
 
 **Copy** these CSV files inside the `quick_workshop/seeds` folder.
 
-You can do if with click-cloick-click in your Jupyter Notebook, or just get them via your Python terminal:
+You can do if with click-click-click in your Jupyter Notebook, or just get them via your Python terminal:
 
 ``` bash
 # Move to the Seeds folder
@@ -50,7 +50,7 @@ For this workshop, we will tweak the use of `seed` to import fake data.
 > :bulb: Usually you don't need to bring fake data like this, because you already have something in your database. But hey it's a workshop :smirk:. If you want to extend this workshop, I recommend to ingest data with open source tools such as **Airbyte** or **Meltano**. Both can also be self-hosted or provided as SaaS offers.
 
 
-From a entity relationship diagram (ERD) point of view, data is linked like this:
+From an entity relationship diagram (ERD) point of view, data is linked like this:
 
 ![Data ERD](img/fakedata.schema.png)
 

@@ -206,11 +206,11 @@ If all checks have passed, we are good! dbt is able to find your configuration a
 
 ### Perform a first dummy dbt run
 
-During the project initialization, dbt pushed examples inside the `models` folder.
+During the project initialization, dbt pushed example inside the `models` folder.
 
 When your perform a dbt run, dbt looks for models inside this folder and will run them.
 
-> If you go back to the previous step, you will notice at the end of your `dbt_project.yml` configuration that we asked to build models inside /models/examples.
+> If you go back to the previous step, you will notice at the end of your `dbt_project.yml` configuration that we asked to build models inside /models/example.
 
 Perform your first run:
 
@@ -223,7 +223,7 @@ quick_workshop$ dbt run
 
 As shown in the result, 2 models were completed successfully.
 
-These models are dummy ones. You can check what's inside by browsing into `/models/examples` and open the `.SQL` files. 
+These models are dummy ones. You can check what's inside by browsing into `/models/example` and open the `.SQL` files. 
 In short, the first SQL model will perform a SELECT on a fake source data, and the second dbt model will perform a SELECT on top of the first SQL model. 
 
 The good thing is, dbt is able to materialize results. so you can reuse your results easily (like, hmmm, for BI reports maybe ?:wink:). It was the case for these two models. 
