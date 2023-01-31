@@ -111,7 +111,7 @@ To setup a new database server, two solutions:
 
 We will go for a OVHcloud product here:
 
-1. Go to [OVHcloud control panel](https://www.ovhcloud.com/auth/).
+1. Go to [OVHcloud control panel](https://www.ovhcloud.com/).
 2. Go to Public Cloud section in the top menu.
 3. Create a new project or select an existing one.
 
@@ -126,7 +126,7 @@ Once your project is ready, select `Databases`in the left menu then create a new
 Launch this managed database server.
 Once this server is up and running, you will have to configure users and authorized IPs.
 
-Go in `Users` tab, and regenerate a password for user `**avdadmin**`. Copy his password safely.
+Go in `Users` tab, and regenerate a password for user `**avnadmin**`. Copy his password safely.
 You can also opt for a new user creation via a PostgreSQL client if you are more comfortable. Be sure to grant him admin role.
 
 Now go in `Authorized IPs` and add the IP **0.0.0.0/0**.

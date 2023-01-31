@@ -31,7 +31,7 @@ We will install **dbt Core** in our case.
 
 Since we will use dbt with PostgreSQL, we will install dbt Core and dbt PostgreSQL connector at once.
 
-Go in you Python terminal and type:
+Go in your Python terminal and type:
 
 ``` bash
 # Update PIP to the latest version
@@ -161,7 +161,7 @@ quick_workshop:
       threads: 4
       host: postgresql-5c66e728-o90e8df85.database.cloud.ovh.net
       port: 20184
-      user: avdadmin
+      user: avnadmin
       pass: hmTiDdN0y*********
       dbname: defaultdb
       schema: development

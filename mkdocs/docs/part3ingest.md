@@ -24,7 +24,7 @@ Seeds workflow is:
 > :hatched_chick: For easiness, this fake data is inspired from official dbt example called `jaffle_shop`but with extra columns for better use-cases with Metabase (more fields, and more lines). Full credits goes to this official dbt example repository.
 
 **Download** the fake data provided in this workshop Github repository.
-It consist of 3 CSV files, wike fake data (generated with www.Mockaroo.com).
+It consist of 3 CSV files, with fake data (generated with www.Mockaroo.com).
 
 **Copy** these CSV files inside the `quick_workshop/seeds` folder.
 
